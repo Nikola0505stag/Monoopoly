@@ -16,5 +16,9 @@ public:
 	int getAmount() const;
 
 	virtual void applyEffect(Player& player) override;
+	virtual Card* clone() const override;
+
+	// Inherited via Card
+	void print() const override;
 };
 

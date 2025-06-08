@@ -15,6 +15,16 @@ void MovePositionCard::applyEffect(Player& player)
 	player.setPosition(player.getPosition() + positionChange);
 }
 
+Card* MovePositionCard::clone() const
+{
+	return new MovePositionCard(*this);
+}
+
+void MovePositionCard::print() const
+{
+	std::cout << "MovePositionCard: Move " << positionChange << " positions." << std::endl;
+}
+
 MovePositionCard::MovePositionCard()
 {
 	setPositionChange(0);

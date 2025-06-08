@@ -27,3 +27,13 @@ void PaymentCard::applyEffect(Player& player)
 		throw std::invalid_argument("Player cannot have negative money.");
 	}
 }
+
+Card* PaymentCard::clone() const
+{
+	return new PaymentCard(*this);
+}
+
+void PaymentCard::print() const
+{
+	std::cout << "PaymentCard: Pay " << amount << " money.\n";
+}

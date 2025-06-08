@@ -12,6 +12,11 @@ public:
 	GroupPaymentCard(size_t size, int amount, Player* players);
 
 	void applyEffect(Player& player) override;
+	Card* clone() const override;
+	
+
+	// Inherited via PaymentCard
+	void print() const override;
 
 };
 

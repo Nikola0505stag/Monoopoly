@@ -23,3 +23,13 @@ void GroupPaymentCard::applyEffect(Player& player)
 		throw std::invalid_argument("Player cannot have negative money.");
 	}
 }
+
+Card* GroupPaymentCard::clone() const
+{
+	return new GroupPaymentCard(*this);
+}
+
+void GroupPaymentCard::print() const
+{
+	std::cout << "GroupPaymentCard: Received " << getAmount() << " to each player in the group.\n";
+}

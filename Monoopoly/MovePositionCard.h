@@ -13,5 +13,10 @@ public:
 	int getPositionChange() const;
 
 	void applyEffect(Player& player) override;
+
+	Card* clone() const override;
+
+	// Inherited via Card
+	void print() const override;
 };
 
