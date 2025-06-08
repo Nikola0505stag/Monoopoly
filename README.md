@@ -1,6 +1,6 @@
 
 <p align="center">
-  <img src="radmePic.png" alt="Monoopoly logo" width = 500 />
+  <img src="readmePic.png" alt="Monoopoly logo" width = 500 />
 </p>
 
 # MonOOPoly 🎲💼
