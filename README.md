@@ -1,6 +1,7 @@
-# MonOOPoly 🎲💼
 
-<img src="readmePic.png" alt="MonOOPoly Logo" width="400"/>
+<img src="readmePic.png" alt="MonOOPoly Logo" width="400" padding = "50"/>
+
+# MonOOPoly 🎲💼
 
 ## 📌 Project Description
 
