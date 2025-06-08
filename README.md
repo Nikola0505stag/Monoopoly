@@ -1,6 +1,6 @@
 # MonOOPoly 🎲💼
 
-<img src="[monoopoly_logo.png](https://www.google.com/search?sxsrf=AE3TifOlrKGLcTN0o040aCWK3ciaCmm-rA:1749419532550&q=monopoly+logo&udm=2#vhid=zjmToKk2960CAM&vssid=mosaic)" alt="MonOOPoly Logo" width="400"/>
+<img src="assets/monoopoly_logo.png" alt="MonOOPoly Logo" width="400"/>
 
 ## 📌 Project Description
 
