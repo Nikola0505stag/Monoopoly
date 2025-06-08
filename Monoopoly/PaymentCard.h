@@ -9,12 +9,12 @@ public:
 
 	PaymentCard();
 	PaymentCard(int amount);
-
-
+	//PaymentCard(const PaymentCard& other) = default;
+	//PaymentCard& operator=(const PaymentCard& other) = default;
 
 	void setAmount(int amount);
 	int getAmount() const;
 
-	void applyEffect(Player& player) override;
+	virtual void applyEffect(Player& player) override;
 };
 

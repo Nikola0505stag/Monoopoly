@@ -1,19 +1,17 @@
 #pragma once
+#define MAX_PLAYERS 6
 #include "PaymentCard.h"
 class GroupPaymentCard : public PaymentCard
 {
-	Player* players = nullptr;
+	size_t size;
+	Player* players[MAX_PLAYERS];
 
 public:
 
-	GroupPaymentCard();
-	GroupPaymentCard(int amount, Player* players);
-
-	void setPlayers(Player* players);
-	Player* getPlayers() const;
+	GroupPaymentCard() = delete;
+	GroupPaymentCard(size_t size, int amount, Player* players);
 
 	void applyEffect(Player& player) override;
 
-	~GroupPaymentCard();
 };
 
