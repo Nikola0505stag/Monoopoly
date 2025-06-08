@@ -1,5 +1,5 @@
 
-<img src="readmePic" alt="MonOOPoly Logo" style="padding: 20px;" width="400"/>
+<img src="readmePic" alt="MonOOPoly Logo"  width="400"/>
 
 # MonOOPoly 🎲💼
 
