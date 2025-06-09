@@ -126,10 +126,16 @@ void Deck::fillDeck(size_t size, Player* players)
 	// capacity = 32
 
 	for (int i = 0; i < 10; i++) {
-		addCard(new MovePositionCard(i + 1)); 
+		if (i % 2 == 0)
+			addCard(new MovePositionCard(i + 1)); 
+		else
+			addCard(new MovePositionCard(i * -1 + 1));
 	}
 	for (int i = 10; i < 20; i++) {
-		addCard(new PaymentCard(i * 7));
+		if(i%2 == 0)
+			addCard(new PaymentCard(i * 7));
+		else 
+			addCard(new PaymentCard(i * -7));
 	}
 	for (int i = 20; i < 32; i++) {
 		if (i % 2 == 0)

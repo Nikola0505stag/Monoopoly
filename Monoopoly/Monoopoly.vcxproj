@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClInclude Include="Card.h" />
     <ClInclude Include="Deck.h" />
+    <ClInclude Include="Field.h" />
     <ClInclude Include="GroupPaymentCard.h" />
     <ClInclude Include="MovePositionCard.h" />
     <ClInclude Include="MyQueue.hpp" />
@@ -140,6 +141,7 @@
   <ItemGroup>
     <ClCompile Include="Card.cpp" />
     <ClCompile Include="Deck.cpp" />
+    <ClCompile Include="Field.cpp" />
     <ClCompile Include="GroupPaymentCard.cpp" />
     <ClCompile Include="MovePositionCard.cpp" />
     <ClCompile Include="MyString.cpp" />
