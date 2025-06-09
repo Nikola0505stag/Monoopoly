@@ -1,6 +1,9 @@
-# MonOOPoly 🎲💼
 
-<img src="assets/monoopoly_logo.png" alt="MonOOPoly Logo" width="400"/>
+<p align="center">
+  <img src="readmePic.png" alt="Monoopoly logo" width = 800 />
+</p>
+
+# MonOOPoly 🎲💼
 
 ## 📌 Project Description
 
