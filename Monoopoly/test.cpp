@@ -30,6 +30,7 @@ int main() {
 	Card* card = deck.drawCard();
 	cout << endl << "Card drawn: ";
 	card->print();
+
 	card->applyEffect(players[0]);
 	cout << endl << endl << endl;
 	cout << players[0] << "\n" << players[1] << "\n" << players[2];
