@@ -31,5 +31,5 @@ Card* GroupPaymentCard::clone() const
 
 void GroupPaymentCard::print() const
 {
-	std::cout << "GroupPaymentCard: Received " << getAmount() << " to each player in the group.\n";
+	std::cout << "GroupPaymentCard: Received " << getAmount() << " from each player in the group.\n";
 }

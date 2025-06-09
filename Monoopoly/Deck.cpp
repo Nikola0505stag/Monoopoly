@@ -121,15 +121,21 @@ Card* Deck::drawCard()
 	return card;
 }
 
-void Deck::fillDeck()
+void Deck::fillDeck(size_t size, Player* players)
 {
-	// capacity = 64
+	// capacity = 32
 
-	for (int i = 0; i < capacity / 4; i++) {
+	for (int i = 0; i < 10; i++) {
 		addCard(new MovePositionCard(i + 1)); 
 	}
-	for (int i = capacity / 4; i < capacity / 2; i++) {
+	for (int i = 10; i < 20; i++) {
 		addCard(new PaymentCard(i * 7));
+	}
+	for (int i = 20; i < 32; i++) {
+		if (i % 2 == 0)
+			addCard(new GroupPaymentCard(size,i * 5,players));
+		else 
+			addCard(new GroupPaymentCard(size, i * -5, players));
 	}
 	
 }

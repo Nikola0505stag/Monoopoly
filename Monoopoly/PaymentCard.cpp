@@ -35,5 +35,5 @@ Card* PaymentCard::clone() const
 
 void PaymentCard::print() const
 {
-	std::cout << "PaymentCard: Pay " << amount << " money.\n";
+	std::cout << "PaymentCard: Receive " << amount << " money.\n";
 }

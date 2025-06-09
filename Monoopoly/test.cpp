@@ -16,32 +16,22 @@ int main() {
 
 	Player players[3];
 	cin >> players[0] >> players[1] >> players[2];
-
-	GroupPaymentCard group(3, 100, players);
-
+	cout << players[0] << "\t" << players[1] << "\t" << players[2];
 	Deck deck;
 
-	deck.addCard(new MovePositionCard(5));
-	deck.addCard(group.clone());
-	deck.addCard(new PaymentCard(3));
-
-	cout << endl;
+	deck.fillDeck(3, players);
 	deck.printDeck();
-
-	cout << endl << endl;
-
 	deck.shuffle();
+
+	cout << endl << endl << endl;
+
 	deck.printDeck();
-	cout << endl << endl;
 
 	Card* card = deck.drawCard();
-	cout << "\nDrawn card: ";
+	cout << endl << "Card drawn: ";
 	card->print();
-
 	card->applyEffect(players[0]);
-
-	cout << players[0] << endl << players[1] << endl << players[2];
-
-	delete card;
+	cout << endl << endl << endl;
+	cout << players[0] << "\n" << players[1] << "\n" << players[2];
 	return 0;
 }

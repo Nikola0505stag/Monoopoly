@@ -10,7 +10,7 @@ class Deck
 {
 	Card** cards;
 	size_t size;
-	size_t capacity = 64;
+	size_t capacity = 32;
 
 	void copyFrom(const Deck& other);
 	void moveFrom(Deck&& other);
@@ -33,7 +33,7 @@ public:
 	void shuffle();
 	Card* drawCard();
 	
-	void fillDeck();
+	void fillDeck(size_t size,Player* players);
 	void emptyDeck();
 };
 
