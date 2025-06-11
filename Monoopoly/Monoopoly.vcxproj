@@ -137,6 +137,7 @@
     <ClInclude Include="MyVector.hpp" />
     <ClInclude Include="PaymentCard.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="Property.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Card.cpp" />
@@ -147,6 +148,7 @@
     <ClCompile Include="MyString.cpp" />
     <ClCompile Include="PaymentCard.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Property.cpp" />
     <ClCompile Include="test.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

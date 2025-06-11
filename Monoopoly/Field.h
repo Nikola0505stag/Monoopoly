@@ -21,6 +21,5 @@ public:
 	virtual ~Field() = default;
 	virtual void print() const = 0;
 	virtual Field* clone() const = 0;
-	//virtual void applyEffect(class Player& player) const = 0;
 };
 
