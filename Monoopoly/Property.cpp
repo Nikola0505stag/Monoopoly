@@ -65,7 +65,7 @@ void Property::print() const
         << "Price: " << getPrice() << "\n"
         << "Price for House: " << getPriceHouse() << "\n"
         << "Price for Castle: " << getPriceCastle() << "\n"
-        << "Player: " << *owner;
+        << "Player: " << *owner << "\n";
         
 }
 
