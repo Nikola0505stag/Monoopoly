@@ -1,5 +1,11 @@
 #pragma once
 #include "Field.h"
+#include "StartField.h"
+#include "Property.h"
+#include "Parking.h"
+#include "Jail.h"
+#include "CardField.h"
+#include "GoJail.h"
 
 class Fields
 {
@@ -22,5 +28,8 @@ public:
 
 	void addField(Field* field);
 	void printFields() const;
+	void fillFields();
+	
+	size_t getSize() const;
 };
 

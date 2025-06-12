@@ -132,7 +132,7 @@
     <ClInclude Include="Deck.h" />
     <ClInclude Include="Field.h" />
     <ClInclude Include="Fields.h" />
-    <ClInclude Include="GoToJailField.h" />
+    <ClInclude Include="GoJail.h" />
     <ClInclude Include="GroupPaymentCard.h" />
     <ClInclude Include="Jail.h" />
     <ClInclude Include="MovePositionCard.h" />
@@ -151,7 +151,7 @@
     <ClCompile Include="Deck.cpp" />
     <ClCompile Include="Field.cpp" />
     <ClCompile Include="Fields.cpp" />
-    <ClCompile Include="GoToJailField.cpp" />
+    <ClCompile Include="GoJail.cpp" />
     <ClCompile Include="GroupPaymentCard.cpp" />
     <ClCompile Include="Jail.cpp" />
     <ClCompile Include="MovePositionCard.cpp" />

@@ -64,8 +64,11 @@ void Property::print() const
         << "Index: " << getIndex() << "\n"
         << "Price: " << getPrice() << "\n"
         << "Price for House: " << getPriceHouse() << "\n"
-        << "Price for Castle: " << getPriceCastle() << "\n"
-        << "Player: " << *owner << "\n";
+        << "Price for Castle: " << getPriceCastle() << "\n";
+    if (owner == nullptr) 
+		std::cout << "Player: None\n";
+    else 
+        std::cout<< "Player: " << *owner << "\n";
         
 }
 
