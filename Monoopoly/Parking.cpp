@@ -15,3 +15,8 @@ Field* Parking::clone() const
 {
     return new Parking(*this);
 }
+
+void Parking::applyEffect(Player& player)
+{
+	std::cout << "You are in the parking lot.";
+}

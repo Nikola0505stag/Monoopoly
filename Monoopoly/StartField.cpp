@@ -12,3 +12,8 @@ Field* StartField::clone() const
 {
 	return new StartField(*this);
 }
+
+void StartField::applyEffect(Player& player)
+{
+	player.setMoney(player.getMoney() + 200);
+}

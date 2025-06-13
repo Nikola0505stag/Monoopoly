@@ -76,3 +76,29 @@ Field* Property::clone() const
 {
     return new Property(*this);
 }
+
+void Property::applyEffect(Player& player)
+{
+    if (getOwner() == nullptr) {
+        std::cout << "Want to buy? y/n";
+        char choice;
+
+        std::cin >> choice;
+        if (choice == 'y') {
+            if (player.getMoney() >= getPrice()) {
+                player.setMoney(player.getMoney() - getPrice());
+                setPlayer(&player);
+                std::cout << "You bought the property: " << getDescription() << "\n";
+            }
+            else {
+                throw std::invalid_argument("Not enough money to buy the property.\n");
+            }
+        }
+        else {
+            std::cout << "You chose not to buy the property.\n";
+        }
+    }
+    else {
+        throw std::invalid_argument("Property already owned by another player.\n");
+    }
+}

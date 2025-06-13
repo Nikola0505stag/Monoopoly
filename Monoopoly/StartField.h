@@ -10,6 +10,6 @@ public:
 	void print() const override;
 
 	Field* clone() const override;
-
+	void applyEffect(Player& player) override;
 };
 

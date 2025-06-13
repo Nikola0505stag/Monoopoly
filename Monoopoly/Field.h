@@ -1,5 +1,6 @@
 #pragma once
 #include "MyString.h"
+#include "Player.h"
 
 class Field
 {
@@ -22,6 +23,6 @@ public:
 	virtual void print() const = 0;
 	virtual Field* clone() const = 0;
 
-	//virtual void applyEffect(Player& player) = 0;
+	virtual void applyEffect(Player& player) = 0;
 };
 

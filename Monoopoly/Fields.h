@@ -9,6 +9,8 @@
 
 class Fields
 {
+	Deck* deck;
+
 	Field** fields;
 	size_t size;
 	size_t capacity = 40;
@@ -31,5 +33,7 @@ public:
 	void fillFields();
 	
 	size_t getSize() const;
+
+	Field* operator[](size_t index) const;
 };
 

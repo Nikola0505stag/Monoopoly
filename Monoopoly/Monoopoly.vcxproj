@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Board.h" />
     <ClInclude Include="Card.h" />
     <ClInclude Include="CardField.h" />
     <ClInclude Include="Deck.h" />
@@ -146,6 +147,7 @@
     <ClInclude Include="StartField.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Board.cpp" />
     <ClCompile Include="Card.cpp" />
     <ClCompile Include="CardField.cpp" />
     <ClCompile Include="Deck.cpp" />

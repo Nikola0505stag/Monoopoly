@@ -15,3 +15,9 @@ Field* GoJail::clone() const
 {
     return new GoJail(*this);
 }
+
+void GoJail::applyEffect(Player& player)
+{
+    std::cout << "You are going to jail.";
+	player.setPosition(10);
+}

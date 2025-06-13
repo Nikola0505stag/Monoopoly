@@ -12,5 +12,9 @@ public:
 
 	Field* clone() const override;
 
+
+	// Inherited via Field
+	void applyEffect(Player& player) override;
+
 };
 

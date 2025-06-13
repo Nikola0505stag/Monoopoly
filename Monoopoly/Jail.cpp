@@ -15,3 +15,8 @@ Field* Jail::clone() const
 {
 	return new Jail(*this);
 }
+
+void Jail::applyEffect(Player& player)
+{
+	std::cout << "You are just visiting the prison.";
+}
