@@ -39,5 +39,9 @@ Deck* CardField::getDeck() const
 
 void CardField::applyEffect(Player& player)
 {
+	if (deck == nullptr)
+		throw std::invalid_argument("Deck is empty.");
 
+	Card* card = deck->drawCard();
+	card->applyEffect(player);
 }

@@ -8,6 +8,7 @@ void Fields::copyFrom(const Fields& other)
 	for (int i = 0; i < size; i++) {
 		fields[i] = other.fields[i]->clone();
 	}
+	deck = other.deck;
 }
 
 void Fields::moveFrom(Fields&& other)
@@ -20,6 +21,8 @@ void Fields::moveFrom(Fields&& other)
 	other.size = 0;
 	other.capacity = 0;
 	other.fields = nullptr;
+	deck = other.deck;
+	other.deck = nullptr;
 }
 
 void Fields::free()
@@ -31,12 +34,14 @@ void Fields::free()
 
 	size = 0;
 	capacity = 0;
+	deck = nullptr;
 }
 
 Fields::Fields()
 {
 	size = 0;
 	capacity = 40;
+	deck = nullptr;
 	fields = new Field * [capacity] {};
 }
 
@@ -141,4 +146,14 @@ size_t Fields::getSize() const
 Field* Fields::operator[](size_t index) const
 {
 	return fields[index];
+}
+
+void Fields::setDeck(Deck* deck)
+{
+	this->deck = deck;
+}
+
+Deck* Fields::getDeck() const
+{
+	return deck;
 }
