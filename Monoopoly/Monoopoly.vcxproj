@@ -131,6 +131,7 @@
     <ClInclude Include="Card.h" />
     <ClInclude Include="CardField.h" />
     <ClInclude Include="Deck.h" />
+    <ClInclude Include="Dice.h" />
     <ClInclude Include="Field.h" />
     <ClInclude Include="Fields.h" />
     <ClInclude Include="GoJail.h" />
@@ -151,6 +152,7 @@
     <ClCompile Include="Card.cpp" />
     <ClCompile Include="CardField.cpp" />
     <ClCompile Include="Deck.cpp" />
+    <ClCompile Include="Dice.cpp" />
     <ClCompile Include="Field.cpp" />
     <ClCompile Include="Fields.cpp" />
     <ClCompile Include="GoJail.cpp" />
