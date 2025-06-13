@@ -20,4 +20,5 @@ void GoJail::applyEffect(Player& player)
 {
     std::cout << "You are going to jail.";
 	player.setPosition(10);
+    player.prisoner();
 }

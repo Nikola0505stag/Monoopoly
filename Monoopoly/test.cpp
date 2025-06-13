@@ -22,43 +22,31 @@ using namespace std;
 int main() {
 	
 
+	Player players[3];
+	players[0].setName("Player1");
+	players[1].setName("Player2");
+	players[2].setName("Player3");
 
-	
-
-	
-
-	Player players[2];
-	players[1].setName("Martin");
-	players[0].setName("Nikola");
+	cout << players[0] << endl;
+	cout << players[1] << endl;
+	cout << players[2] << endl;
 
 	Deck deck;
-	deck.fillDeck(2, players);
+	deck.fillDeck(3, players);
 	deck.shuffle();
+	deck.printDeck();
 
 	Fields fields;
 	fields.setDeck(&deck);
 	fields.fillFields();
+	cout << endl << endl;
+	cout << endl << endl;
 	fields.printFields();
-	std::cout << "\n\n\n";
-	/*Player pl2("Martin");
-	player.setMoney(1000);
-	cout << player;
-	cout << "\n\n";
-	fields[39]->print();
-	fields[39]->applyEffect(player);
 
-	cout << player;
-
-	cout << "\n\n";
-	fields[39]->print();
-	cout << "\n\n";*/
-
-	//fields[39]->applyEffect(pl2);
-
-	/*fields[30]->applyEffect(player);
-	cout << player;*/
-	fields[38]->applyEffect(players[0]);
-	std::cout << "\n\n" << players[0];
-
+	fields[39]->applyEffect(players[0]);
+	cout << endl << endl;
+	cout << players[0] << endl;
+	cout << players[1] << endl;
+	cout << players[2] << endl;
 	return 0;
 }

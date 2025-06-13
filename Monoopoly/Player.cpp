@@ -5,6 +5,7 @@ Player::Player()
     setName("DEFAULT_NAME");
     setMoney(START_MONEY);
     setPosition(0);
+    setInPrison(false);
 }
 
 Player::Player(MyString name)
@@ -12,6 +13,7 @@ Player::Player(MyString name)
 	setName(name);
 	setMoney(START_MONEY);
 	setPosition(0);
+    setInPrison(false);
 }
 
 MyString Player::getName() const
@@ -46,9 +48,25 @@ void Player::setPosition(int position)
     this->position = position;
 }
 
+void Player::setInPrison(bool inPrison)
+{
+	this->inPrison = inPrison;
+}
+
+bool Player::getInPrison() const
+{
+    return inPrison;
+}
+
+void Player::prisoner()
+{
+    setInPrison(getInPrison() -1);
+}
+
 std::ostream& operator<<(std::ostream& os, const Player& player)
 {
-	os << player.name << "\t" << player.money << "\t" << player.position;
+    os << player.name << "\t" << player.money << "\t" << player.position << "\t";
+        player.inPrison? os <<"In Prison!" : os <<"Not in prison!";
     return os;
 }
 

@@ -6,7 +6,8 @@ class Player
 {
 	MyString name;
 	int money;
-	int position;
+	int position;	
+	bool inPrison;
 
 public:
 	Player();
@@ -23,5 +24,10 @@ public:
 
 	friend std::ostream& operator<<(std::ostream& os, const Player& player);
 	friend std::istream& operator>> (std::istream& is, Player& player);
+
+	void setInPrison(bool inPrison);
+	bool getInPrison() const;
+
+	void prisoner();
 };
 
