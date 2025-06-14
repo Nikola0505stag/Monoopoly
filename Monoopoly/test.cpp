@@ -23,26 +23,26 @@ using namespace std;
 int main() {
 	
 
-	//Player players[3];
-	//players[0].setName("Player1");
-	//players[1].setName("Player2");
-	//players[2].setName("Player3");
+	Player players[3];
+	players[0].setName("Player1");
+	players[1].setName("Player2");
+	players[2].setName("Player3");
 
-	//cout << players[0] << endl;
-	//cout << players[1] << endl;
-	//cout << players[2] << endl;
+	cout << players[0] << endl;
+	cout << players[1] << endl;
+	cout << players[2] << endl;
 
-	//Deck deck;
-	//deck.fillDeck(3, players);
-	//deck.shuffle();
-	//deck.printDeck();
+	Deck deck;
+	deck.fillDeck(3, players);
+	deck.shuffle();
+	deck.printDeck();
 
-	//Fields fields;
-	//fields.setDeck(&deck);
-	//fields.fillFields();
-	//cout << endl << endl;
-	//cout << endl << endl;
-	//fields.printFields();
+	Fields fields;
+	fields.setDeck(&deck);
+	fields.fillFields();
+	cout << endl << endl;
+	cout << endl << endl;
+	fields.printFields();
 
 	//fields[39]->applyEffect(players[0]);
 	//cout << endl << endl;
@@ -50,23 +50,21 @@ int main() {
 	//cout << players[1] << endl;
 	//cout << players[2] << endl;
 
+	cout << endl << endl;
 	Dice dice;
 	dice.rollingADice();
+	cout << dice.getSum();
+	
+	players[0].setPosition(players[0].getPosition() + dice.getSum());
 
-	cout << dice.getSum() << endl;
+	cout << players[0] << endl;
+	cout << players[1] << endl;
+	cout << players[2] << endl;
 
-	dice.rollingADice();
-
-	cout << dice.getSum() << endl;
-	dice.rollingADice();
-
-	cout << dice.getSum() << endl;
-	dice.rollingADice();
-
-	cout << dice.getSum() << endl;
-	dice.rollingADice();
-
-	cout << dice.getSum() << endl;
+	fields[players[0].getPosition()]->applyEffect(players[0]);
+	cout << players[0] << endl;
+	cout << players[1] << endl;
+	cout << players[2] << endl;
 
 	return 0;
 }
