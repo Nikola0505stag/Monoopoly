@@ -6,16 +6,18 @@ Property::Property() : Field()
 	setPlayer(nullptr);
     setPriceHouse(0);
     setPriceCastle(0);
+    setColor(Color::DEFAULT_COLOR);
 }
 
 Property::Property(size_t index, const MyString& description, unsigned int price,
-    unsigned int priceHouse, unsigned int priceCastle, Player* player)
+    unsigned int priceHouse, unsigned int priceCastle, Player* player, Color color)
     : Field(index, description)
 {
     setPrice(price);
     setPlayer(player);
     setPriceCastle(priceCastle);
 	setPriceHouse(priceHouse);
+    setColor(color);
 }
 
 void Property::setPrice(unsigned int price)
@@ -38,6 +40,11 @@ void Property::setPlayer(Player* player)
     this->owner = player;
 }
 
+void Property::setColor(Color color)
+{
+    this->color = color;
+}
+
 unsigned int Property::getPrice() const
 {
     return price;
@@ -51,6 +58,11 @@ unsigned int Property::getPriceHouse() const
 unsigned int Property::getPriceCastle() const
 {
     return priceCastle;
+}
+
+Color Property::getColor() const
+{
+    return color;
 }
 
 Player* Property::getOwner() const
@@ -75,7 +87,7 @@ void Property::print() const
     std::cout << "|------------|\n";
     std::cout << "|" <<getDescription() <<"|\n";
     std::cout << "|    " <<getPrice() << "     |\n";
-    std::cout << "|            |\n";
+    std::cout << "|"  << color<<          "|\n";
     if (owner == nullptr)
         std::cout << "| Player:None|\n";
     else
