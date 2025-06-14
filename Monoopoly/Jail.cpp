@@ -8,7 +8,16 @@ Jail::Jail(size_t index) : Field(index, "Jail")
 
 void Jail::print() const
 {
-	std::cout << "Jail: " << getDescription() << " at index " << getIndex() << std::endl;
+	//std::cout << "Jail: " << getDescription() << " at index " << getIndex() << std::endl;
+	std::cout << "--------------\n";
+	std::cout << "|            |\n";
+	std::cout << "|            |\n";
+	std::cout << "|------------|\n";
+	std::cout << "|    Jail    |\n";
+	std::cout << "|------------|\n";
+	std::cout << "|            |\n";
+	std::cout << "|            |\n";
+	std::cout << "--------------\n";
 }
 
 Field* Jail::clone() const

@@ -1,21 +1,12 @@
-#include "Board.h"
+﻿#include "Board.h"
+using namespace std;
 
 Board::Board()
 {
-	fields.fillFields();
-}
+    
 
-void Board::printBoard() const
-{
-	std::cout << "--------------------\n";
-	std::cout << "|                  |\n";
-	std::cout << "|                  |\n";
-	std::cout << "|                  |\n";
-	std::cout << "|                  |\n";
-	std::cout << "|                  |\n";
-	std::cout << "|                  |\n";
-	std::cout << "|                  |\n";
-	std::cout << "|                  |\n";
-	std::cout << "|                  |\n";
-	std::cout << "--------------------\n";
+    for (int i = 0; i < WIDTH; i++) {
+        std::cout << "-";
+    }
+    std::cout << std::endl;
 }

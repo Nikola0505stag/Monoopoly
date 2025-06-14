@@ -8,7 +8,18 @@ GoJail::GoJail(size_t index) : Field(index, "Go to Jail")
 
 void GoJail::print() const
 {
-    std::cout << "Go to Jail Field: " << getDescription() << " at index: " << getIndex() << std::endl;
+    //std::cout << "Go to Jail Field: " << getDescription() << " at index: " <<
+    // getIndex() << std::endl;
+
+	std::cout << "--------------\n";
+	std::cout << "|            |\n";
+	std::cout << "|            |\n";
+	std::cout << "|------------|\n";
+	std::cout << "| Go to Jail |\n";
+	std::cout << "|------------|\n";
+	std::cout << "|            |\n";
+	std::cout << "|            |\n";
+	std::cout << "--------------\n";
 }
 
 Field* GoJail::clone() const

@@ -1,11 +1,11 @@
 #pragma once
 #include "Fields.h"
+#define WIDTH 156
 class Board
 {
-	Fields  fields;
+	
 
 public:
 	Board();
-	void printBoard() const;
 };
 

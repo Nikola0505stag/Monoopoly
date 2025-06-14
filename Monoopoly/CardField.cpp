@@ -12,14 +12,25 @@ CardField::CardField(size_t index, Deck* deck) : Field(index, "Card Field")
 
 void CardField::print() const
 {
-	std::cout << "CardField: " << getDescription() << " at index " << getIndex() << std::endl;
+	/*std::cout << "CardField: " << getDescription() << " at index " << getIndex() << std::endl;
 	if (deck != nullptr)
 	{
 		std::cout << "Deck: \n";
 		deck->printDeck();
 	}
 	if (deck == nullptr)
-		std::cout << "Deck: None\n";
+		std::cout << "Deck: None\n";*/
+
+
+	std::cout << "--------------\n";
+	std::cout << "|            |\n";
+	std::cout << "|            |\n";
+	std::cout << "|------------|\n";
+	std::cout << "| Card Field |\n";
+	std::cout << "|------------|\n";
+	std::cout << "|            |\n";
+	std::cout << "|            |\n";
+	std::cout << "--------------\n";
 }
 
 Field* CardField::clone() const

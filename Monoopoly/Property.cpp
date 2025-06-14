@@ -60,7 +60,7 @@ Player* Property::getOwner() const
 
 void Property::print() const
 {
-    std::cout << "Property: " << getDescription() << "\n"
+   /* std::cout << "Property: " << getDescription() << "\n"
         << "Index: " << getIndex() << "\n"
         << "Price: " << getPrice() << "\n"
         << "Price for House: " << getPriceHouse() << "\n"
@@ -68,7 +68,20 @@ void Property::print() const
     if (owner == nullptr) 
 		std::cout << "Player: None\n";
     else 
-        std::cout<< "Player: " << *owner << "\n";
+        std::cout<< "Player: " << *owner << "\n";*/
+
+    std::cout << "--------------\n";
+    std::cout << "|  Property  |\n";
+    std::cout << "|------------|\n";
+    std::cout << "|" <<getDescription() <<"|\n";
+    std::cout << "|    " <<getPrice() << "     |\n";
+    std::cout << "|            |\n";
+    if (owner == nullptr)
+        std::cout << "| Player:None|\n";
+    else
+		std::cout << "| Player: " << owner->getName() << "|\n";
+    std::cout << "|            |\n";
+    std::cout << "--------------\n";
         
 }
 
