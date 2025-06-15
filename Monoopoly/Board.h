@@ -4,12 +4,8 @@
 
 class Board
 {
-	
 	Fields* fields = nullptr;
-	
-	
 
-	
 public:
 	Board();
 
@@ -24,4 +20,3 @@ public:
 	void gotoxy(int x, int y) const;
 	void setColor(WORD fg, WORD bg = 0) const;
 };
-

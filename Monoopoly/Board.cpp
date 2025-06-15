@@ -1,52 +1,29 @@
-﻿#include "Board.h"
+﻿
+#include "Board.h"
 using namespace std;
 
 void Board::gotoxy(int x, int y) const
 {
-	COORD c{ (SHORT)x , (SHORT)y };
-	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), c);
+    COORD c{ (SHORT)x , (SHORT)y };
+    SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), c);
 }
 
 void Board::setColor(WORD fg, WORD bg) const
 {
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), fg | (bg << 4));
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), fg | (bg << 4));
 }
 
 void Board::drawGrid(int n, int cellSize) {
     gotoxy(0, 0);
-    // Горен край
-    std::cout << '┌';
-    for (int col = 0; col < n; ++col) {
-        for (int i = 0; i < cellSize; ++i) std::cout << '─';
-        std::cout << (col < n - 1 ? '┬' : '┐');
+    for (int i = 0; i < n * cellSize * 1.12; i++) { // първия ред, линиите са двойно повече за визия само
+        std::cout << "-";
     }
-    std::cout << "\n";
+    gotoxy(0, 1);
+    for (int i = 0; i < n * cellSize; i++) { // първия стълб
+        std::cout << "|\n";
+    }
 
-    for (int row = 0; row < n; ++row) {
-        // Вътрешни редове на клетката
-        for (int line = 0; line < cellSize; ++line) {
-            std::cout << '│';
-            for (int col = 0; col < n; ++col) {
-                for (int i = 0; i < cellSize; ++i) std::cout << ' ';
-                std::cout << '│';
-            }
-            std::cout << "\n";
-        }
-        if (row < n - 1) {
-            std::cout << '├';
-            for (int col = 0; col < n; ++col) {
-                for (int i = 0; i < cellSize; ++i) std::cout << '─';
-                std::cout << (col < n - 1 ? '┼' : '┤');
-            }
-            std::cout << "\n";
-        }
-    }
-    std::cout << '└';
-    for (int col = 0; col < n; ++col) {
-        for (int i = 0; i < cellSize; ++i) std::cout << '─';
-        std::cout << (col < n - 1 ? '┴' : '┘');
-    }
-    std::cout << "\n";
+   
 }
 
 void Board::writeInCell(int cellX, int cellY, int cellSize,
@@ -80,11 +57,11 @@ Fields* Board::getFields() const
 
 void Board::printBoard() const
 {
-	if (fields == nullptr) {
-		cout << "Fields are not set." << endl;
-		return;
-	}
+    if (fields == nullptr) {
+        cout << "Fields are not set." << endl;
+        return;
+    }
 
-	fields->printFields();
-	
+    fields->printFields();
+
 }
