@@ -13,6 +13,80 @@ void Board::setColor(WORD fg, WORD bg) const
     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), fg | (bg << 4));
 }
 
+void Board::fillCells() const
+{
+    MyVector<MyString> curr;
+
+
+    colorCell(10, 10, CELL_SIZE, 0, 15);
+
+    writeInCell(10, 10, CELL_SIZE, "Start", 0,15);
+
+    //colorCell(10, 10, CELL_SIZE, 0, 15);
+    
+    colorCell(9, 10, CELL_SIZE, 15, 0);
+    curr.push_back("Med...");
+    curr.push_back("Avenue");
+    curr.push_back("Price:60$");
+    writeMultilineInCell(9, 10, CELL_SIZE, curr, 15, 0);
+    curr.clear();
+
+    colorCell(8, 10, CELL_SIZE, 0, 15);
+    curr.push_back("Draw");
+    curr.push_back("Card");
+    writeMultilineInCell(8, 10, CELL_SIZE, curr, 0, 15);
+    curr.clear();
+
+    colorCell(7, 10, CELL_SIZE, 15, 0);
+    curr.push_back("Baltic");
+    curr.push_back("Avenue");
+    curr.push_back("Price:60$");
+    writeMultilineInCell(7, 10, CELL_SIZE, curr, 15, 0);
+    curr.clear();
+
+    colorCell(6, 10, CELL_SIZE, 0, 15);
+    curr.push_back("Draw");
+    curr.push_back("Card");
+    writeMultilineInCell(6, 10, CELL_SIZE, curr, 0, 15);
+    curr.clear();
+
+    colorCell(5, 10, CELL_SIZE, 0, 15);
+    curr.push_back("Red");
+    curr.push_back("Van");
+    writeMultilineInCell(5, 10, CELL_SIZE, curr, 0, 15);
+    curr.clear();
+
+    colorCell(4, 10, CELL_SIZE, 0, 9);
+    curr.push_back("Oriental");
+    curr.push_back("Avenue");
+    curr.push_back("Price:100$");
+    writeMultilineInCell(4, 10, CELL_SIZE, curr, 0, 9);
+    curr.clear();
+
+    colorCell(3, 10, CELL_SIZE, 0, 15);
+    curr.push_back("Draw");
+    curr.push_back("Card");
+    writeMultilineInCell(3, 10, CELL_SIZE, curr, 0, 15);
+    curr.clear();
+
+    colorCell(2, 10, CELL_SIZE, 0, 9);
+    curr.push_back("Vermont");
+    curr.push_back("Avenue");
+    curr.push_back("Price:100$");
+    writeMultilineInCell(2, 10, CELL_SIZE, curr, 0, 9);
+    curr.clear();
+
+    colorCell(1, 10, CELL_SIZE, 0, 9);
+    curr.push_back("Conn...");
+    curr.push_back("Avenue");
+    curr.push_back("Price:120$");
+    writeMultilineInCell(1, 10, CELL_SIZE, curr, 0, 9);
+    curr.clear();
+
+    colorCell(0, 10, CELL_SIZE, 0, 15);
+    writeInCell(0, 10, CELL_SIZE, "Jail", 0, 15);
+}
+
 void Board::drawGrid(int n, int cellSize) {
     gotoxy(0, 0);
     std::cout << char(218); // горен ляв ъгъл
@@ -118,7 +192,7 @@ void Board::drawGrid(int n, int cellSize) {
 }
 
 void Board::writeInCell(int cellX, int cellY, int cellSize,
-    const char text[], WORD fg, WORD bg) {
+    const char text[], WORD fg, WORD bg) const {
     int cellHeight = cellSize / 3;
 
     int x = cellX * (cellSize) + (cellSize - strlen(text)) / 2 + 1;
@@ -158,3 +232,53 @@ void Board::printBoard() const
     fields->printFields();
 
 }
+
+void Board::writeMultilineInCell(int cellX, int cellY, int cellSize,
+    const MyVector<MyString>& lines, WORD fg, WORD bg) const {
+
+    int cellHeight = cellSize / 3;
+    int topLeftX = cellX * (cellSize) + 1;
+    int topLeftY = cellY * (cellHeight + 1) + 1;
+
+    int totalLines = lines.getSize();
+
+    // Центрираме вертикално
+    int startLine = (cellHeight - totalLines) / 2;
+    if (startLine < 0) startLine = 0;
+
+    for (int i = 0; i < totalLines; ++i) {
+        int lineLength = lines[i].getSize();
+        if (lineLength > cellSize - 2) lineLength = cellSize - 2;
+
+        int x = topLeftX + (cellSize - lineLength) / 2;
+        int y = topLeftY + startLine + i;
+
+        gotoxy(x, y);
+        setColor(fg, bg);
+        std::cout << lines[i];
+    }
+
+    setColor(7, 0); // reset
+}
+
+void Board::colorCell(int cellX, int cellY, int cellSize, WORD fg, WORD bg) const {
+    int cellHeight = cellSize / 3;
+
+    // Горен ляв ъгъл на клетката (вътре в рамката)
+    int startX = cellX * (cellSize) + 1;
+    int startY = cellY * (cellHeight + 1) + 1;
+
+    setColor(fg, bg);
+
+    for (int y = 0; y < cellHeight; ++y) {
+        gotoxy(startX, startY + y);
+        for (int x = 0; x < cellSize - 1; ++x) {
+            std::cout << " ";
+        }
+    }
+
+    setColor(7, 0); // reset to default (бял текст, черен фон)
+}
+
+
+

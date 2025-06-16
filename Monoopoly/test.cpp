@@ -71,9 +71,14 @@ int main() {
 	//board.printBoard();
 	const int n = 11, cellSize = 10;
 	board.drawGrid(n, cellSize);
+	MyVector<MyString> lines;
+	lines.push_back("Test1");
+	lines.push_back("Test 2");
 	//board.gotoxy(0, 0);
-	board.writeInCell(10,10, cellSize, "Start", 10, 0);
-
+	//board.writeInCell(2,2, cellSize, "Start", 10, 0);
+	//board.writeMultilineInCell(10,0, cellSize, lines,10, 0);
+	
+	board.fillCells();
 	cin.get();
 	//board.gotoxy(0, 71);
 
