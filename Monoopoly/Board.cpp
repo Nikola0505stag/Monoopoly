@@ -45,7 +45,7 @@ void Board::drawGrid(int n, int cellSize) {
 		    std::cout << char(197); // Централна връзка
     }
 	std::cout << char(180) << std::endl; // Т-образна дясна
-    for (int q = 0; q < n - 2; q++) {
+    for (int q = 0; q < n - 3; q++) {
         for (int j = 0; j < cellSize / 3; j++) {
             for (int i = 0; i <= n * cellSize; i++) {
                 if (i != cellSize && i != n * cellSize - cellSize && i != 0 && i != n * cellSize)
@@ -72,9 +72,49 @@ void Board::drawGrid(int n, int cellSize) {
         std::cout << std::endl;
 
     }
+    for (int j = 0; j < cellSize / 3; j++) {
+        for (int i = 0; i <= n * cellSize; i++) {
+            if (i == 0 || i == cellSize || i == (n - 1) * cellSize || i == n * cellSize)
+                std::cout << char(179); // Вертикална линия
+            else
+                std::cout << " ";
+        }
+        std::cout << std::endl;
+    }
    
+    for (int i = 0; i <= cellSize * n; i++) {
+        if (i == cellSize || i == (n - 1) * cellSize)
+            cout << char(197); // Хоризонтална линия
+        else if (i == 0)
+            cout << char(195); // Т-образна лява
+        else if (i == n * cellSize)
+            cout << char(180); // Т-образна дясна
+        else if (i % cellSize == 0)
+            cout << char(194); //Т-образна горна
+        else std::cout << char(196); // Хоризонтална линия
+    }
+    cout << endl;
 
+    for (int j = 0; j < cellSize / 3; j++) {
+        for (int i = 0; i <= n * cellSize; i++) {
+            if (i % cellSize == 0)
+				std::cout << char(179); // Вертикална линия
+            else
+                cout << " ";
 
+        }
+        std::cout << std::endl;
+    }
+   for (int i = 0; i <= n * cellSize; i++) {
+        if (i == 0)
+            std::cout << char(192); // долен ляв ъгъл
+        else if (i == n * cellSize)
+			std::cout << char(217); // долен десен ъгъл
+        else if (i % cellSize == 0) 
+			std::cout << char(193); // Т-образна долна
+        else 
+			std::cout << char(196); // долна хоризонтална линия
+    }
 }
 
 void Board::writeInCell(int cellX, int cellY, int cellSize,
