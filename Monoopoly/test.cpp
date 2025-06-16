@@ -69,14 +69,16 @@ int main() {
 	Board board;
 	board.setFields(&fields);
 	//board.printBoard();
-	const int n = 10, cellSize = 10;
+	const int n = 11, cellSize = 12;
 	board.drawGrid(n, cellSize);
 
 
 	// Пример за писане в клетки без std::string
-	//board.writeInCell(5, 5, cellSize, "P1", FOREGROUND_RED | FOREGROUND_INTENSITY, BACKGROUND_BLUE);
+	//board.writeInCell(0, 0, cellSize, "P1", FOREGROUND_RED | FOREGROUND_INTENSITY, BACKGROUND_BLUE);
 	//board.writeInCell(7, 3, cellSize, "P2", FOREGROUND_GREEN, 0);
 
-	//board.gotoxy(0, (n * (cellSize + 1)) + 2);
+	//board.writeInCell(1, 0, cellSize, "P2", FOREGROUND_GREEN,4);
+	/*board.gotoxy(0, (n * (cellSize + 1)) + 2);*/
+	//board.gotoxy(12, 14);
 	return 0;
 }

@@ -15,14 +15,63 @@ void Board::setColor(WORD fg, WORD bg) const
 
 void Board::drawGrid(int n, int cellSize) {
     gotoxy(0, 0);
-    for (int i = 0; i < n * cellSize * 1.12; i++) { // първия ред, линиите са двойно повече за визия само
-        std::cout << "-";
+    std::cout << char(218); // горен ляв ъгъл
+    for (int i = 1; i < n * cellSize; i++) {
+        if (i % cellSize == 0)
+            std::cout << char(194); // T - линия
+        else
+            std::cout << char(196);
     }
-    gotoxy(0, 1);
-    for (int i = 0; i < n * cellSize; i++) { // първия стълб
-        std::cout << "|\n";
+    std::cout << char(191) << std::endl; // горен десен ъгъл
+    for (int j = 0; j < cellSize / 3; j++) {
+        for (int i = 0; i <= n * cellSize; i++) {
+            if (i % cellSize == 0)
+                std::cout << char(179); // вертикална линия
+            else
+                std::cout << " ";
+        }
+        std::cout << std::endl;
     }
 
+
+
+    std::cout << char(195); // Т-образна лява
+    for (int i = 1; i < n * cellSize; i++) {
+        if (i % cellSize == 0 && i != cellSize && i != n * cellSize - cellSize)
+            std::cout << char(193);//Т-образна долна
+		else if (i != cellSize && i != n * cellSize - cellSize)
+			std::cout << char(196); // хоризонтална линия
+		else
+		    std::cout << char(197); // Централна връзка
+    }
+	std::cout << char(180) << std::endl; // Т-образна дясна
+    for (int q = 0; q < n - 2; q++) {
+        for (int j = 0; j < cellSize / 3; j++) {
+            for (int i = 0; i <= n * cellSize; i++) {
+                if (i != cellSize && i != n * cellSize - cellSize && i != 0 && i != n * cellSize)
+                    std::cout << " ";
+                else
+                    std::cout << char(179); // Вертикална линия
+            }
+            std::cout << std::endl;
+        }
+
+        std::cout << char(195); // Т - образна дясна
+        for (int i = 0; i < n * cellSize; i++) {
+            if (i < cellSize - 1 || i >(n - 1) * cellSize - 1 && i != n * cellSize - 1)
+                std::cout << char(196); // Хоризонтална линия
+            else if (i == cellSize - 1)
+                std::cout << char(180); //	Т-образна дясна
+            else if (i == (n - 1) * cellSize - 1)
+                std::cout << char(195); // Т - образна дясна
+            else if (i == n * cellSize - 1)
+                std::cout << char(180); // Т-образна дясна
+            else
+                std::cout << " ";
+        }
+        std::cout << std::endl;
+
+    }
    
 }
 
