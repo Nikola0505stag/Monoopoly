@@ -19,4 +19,6 @@ public:
 		const char text[], WORD fg, WORD bg);
 	void gotoxy(int x, int y) const;
 	void setColor(WORD fg, WORD bg = 0) const;
+
+	
 };

@@ -119,16 +119,18 @@ void Board::drawGrid(int n, int cellSize) {
 
 void Board::writeInCell(int cellX, int cellY, int cellSize,
     const char text[], WORD fg, WORD bg) {
-    int x = cellX * (cellSize + 1) + 1;
-    int y = cellY * (cellSize + 1) + cellSize / 2;
+    int cellHeight = cellSize / 3;
+
+    int x = cellX * (cellSize) + (cellSize - strlen(text)) / 2 + 1;
+    int y = cellY * (cellHeight + 1) + cellHeight / 2 + 1;
+
     gotoxy(x, y);
     setColor(fg, bg);
-    // Извеждаме всеки символ от C-style низа
-    for (size_t i = 0; i < strlen(text); ++i) {
-        std::cout << text[i];
-    }
+    std::cout << text;
     setColor(7, 0);
 }
+
+
 
 
 Board::Board()
