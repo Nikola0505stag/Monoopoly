@@ -73,6 +73,8 @@ void Board::drawGrid(int n, int cellSize) {
 
     }
    
+
+
 }
 
 void Board::writeInCell(int cellX, int cellY, int cellSize,
