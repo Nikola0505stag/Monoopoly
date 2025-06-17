@@ -18,9 +18,7 @@ void Board::fillCells() const
     MyVector<MyString> curr;
 
 
-    colorCell(10, 10, CELL_SIZE, 0, 15);
-
-    writeInCell(10, 10, CELL_SIZE, "Start", 0,15);
+   
 
     //colorCell(10, 10, CELL_SIZE, 0, 15);
     
@@ -53,6 +51,7 @@ void Board::fillCells() const
     colorCell(5, 10, CELL_SIZE, 0, 15);
     curr.push_back("Red");
     curr.push_back("Van");
+    curr.push_back("Price:200$");
     writeMultilineInCell(5, 10, CELL_SIZE, curr, 0, 15);
     curr.clear();
 
@@ -85,6 +84,204 @@ void Board::fillCells() const
 
     colorCell(0, 10, CELL_SIZE, 0, 15);
     writeInCell(0, 10, CELL_SIZE, "Jail", 0, 15);
+
+    colorCell(0, 9, CELL_SIZE, 0, 13);
+    curr.push_back("St");
+    curr.push_back("Charles");
+    curr.push_back("Place");
+    curr.push_back("Price:140$");
+    writeMultilineInCell(0, 9, CELL_SIZE, curr, 0, 13);
+    curr.clear();
+
+    colorCell(0, 8, CELL_SIZE, 0, 15);
+    curr.push_back("Draw");
+    curr.push_back("Card");
+    writeMultilineInCell(0, 8, CELL_SIZE, curr, 0, 15);
+    curr.clear();
+
+    colorCell(0, 7, CELL_SIZE, 0, 13);
+    curr.push_back("States");
+    curr.push_back("Avenue");
+    curr.push_back("Price:140$");
+    writeMultilineInCell(0, 7, CELL_SIZE, curr, 0, 13);
+    curr.clear();
+
+    colorCell(0, 6, CELL_SIZE, 0, 13);
+    curr.push_back("Virginia");
+    curr.push_back("Avenue");
+    curr.push_back("Price:160$");
+    writeMultilineInCell(0, 6, CELL_SIZE, curr, 0, 13);
+    curr.clear();
+
+    colorCell(0, 5, CELL_SIZE, 0, 15);
+    curr.push_back("Silver");
+    curr.push_back("Van");
+    curr.push_back("Price:200$");
+    writeMultilineInCell(0, 5, CELL_SIZE, curr, 0, 15);
+    curr.clear();
+
+    colorCell(0, 4, CELL_SIZE, 0, 3);
+    curr.push_back("St.");
+    curr.push_back("James");
+    curr.push_back("Place");
+    curr.push_back("Price:180$");
+    writeMultilineInCell(0, 4, CELL_SIZE, curr, 0, 3);
+    curr.clear();
+
+    colorCell(0, 3, CELL_SIZE, 0, 15);
+    curr.push_back("Draw");
+    curr.push_back("Card");
+    writeMultilineInCell(0, 3, CELL_SIZE, curr, 0, 15);
+    curr.clear();
+
+    colorCell(0, 2, CELL_SIZE, 0, 3);
+    curr.push_back("Columbia");
+    curr.push_back("Avenue");
+    curr.push_back("Price:180$");
+    writeMultilineInCell(0, 2, CELL_SIZE, curr, 0, 3);
+    curr.clear();
+
+    colorCell(0, 1, CELL_SIZE, 0, 3);
+    curr.push_back("New York");
+    curr.push_back("Avenue");
+    curr.push_back("Price:200$");
+    writeMultilineInCell(0, 1, CELL_SIZE, curr, 0, 3);
+    curr.clear();
+
+    colorCell(0, 0, CELL_SIZE, 0, 15);
+    writeInCell(0, 0, CELL_SIZE, "Parking", 0, 15);
+
+    colorCell(1, 0, CELL_SIZE, 0, 4);
+    curr.push_back("Kentucky");
+    curr.push_back("Avenue");
+    curr.push_back("Price:220$");
+    writeMultilineInCell(1, 0, CELL_SIZE, curr, 0, 4);
+    curr.clear();
+
+    colorCell(2, 0, CELL_SIZE, 0, 15);
+    curr.push_back("Draw");
+    curr.push_back("Card");
+    writeMultilineInCell(2, 0, CELL_SIZE, curr, 0, 15);
+    curr.clear();
+
+    colorCell(3, 0, CELL_SIZE, 0, 4);
+    curr.push_back("Indiana");
+    curr.push_back("Avenue");
+    curr.push_back("Price:220$");
+    writeMultilineInCell(3, 0, CELL_SIZE, curr, 0, 4);
+    curr.clear();
+
+    colorCell(4, 0, CELL_SIZE, 0, 4);
+    curr.push_back("Illinois");
+    curr.push_back("Avenue");
+    curr.push_back("Price:240$");
+    writeMultilineInCell(4, 0, CELL_SIZE, curr, 0, 4);
+    curr.clear();
+
+    colorCell(5, 0, CELL_SIZE, 0, 15);
+    curr.push_back("White");
+    curr.push_back("Van");
+    curr.push_back("Price:200$");
+    writeMultilineInCell(5, 0, CELL_SIZE, curr, 0, 15);
+    curr.clear();
+
+    colorCell(6, 0, CELL_SIZE, 0, 14);
+    curr.push_back("Atlantic");
+    curr.push_back("Avenue");
+    curr.push_back("Price:260$");
+    writeMultilineInCell(6, 0, CELL_SIZE, curr, 0, 14);
+    curr.clear();
+
+    colorCell(7, 0, CELL_SIZE, 0, 14);
+    curr.push_back("Ventnor");
+    curr.push_back("Avenue");
+    curr.push_back("Price:260$");
+    writeMultilineInCell(7, 0, CELL_SIZE, curr, 0, 14);
+    curr.clear();
+
+    colorCell(8, 0, CELL_SIZE, 0, 15);
+    curr.push_back("Draw");
+    curr.push_back("Card");
+    writeMultilineInCell(8, 0, CELL_SIZE, curr, 0, 15);
+    curr.clear();
+
+    colorCell(9, 0, CELL_SIZE, 0, 14);
+    curr.push_back("Marvin");
+    curr.push_back("Gardens");
+    curr.push_back("Price:270$");
+    writeMultilineInCell(9, 0, CELL_SIZE, curr, 0, 14);
+    curr.clear();
+
+    colorCell(10, 0, CELL_SIZE, 0, 15);
+    curr.push_back("Go to");
+    curr.push_back("Jail");
+    writeMultilineInCell(10, 0, CELL_SIZE, curr, 0, 15);
+    curr.clear();
+
+    colorCell(10, 1, CELL_SIZE, 0, 2);
+    curr.push_back("Pacific");
+    curr.push_back("Avenue");
+    curr.push_back("Price:300$");
+    writeMultilineInCell(10, 1, CELL_SIZE, curr, 0, 2);
+    curr.clear();
+
+    colorCell(10, 2, CELL_SIZE, 0, 2);
+    curr.push_back("North");
+    curr.push_back("Carolina");
+    curr.push_back("Avenue");
+    curr.push_back("Price:300$");
+    writeMultilineInCell(10, 2, CELL_SIZE, curr, 0, 2);
+    curr.clear();
+
+    colorCell(10, 3, CELL_SIZE, 0, 15);
+    curr.push_back("Draw");
+    curr.push_back("Card");
+    writeMultilineInCell(10, 3, CELL_SIZE, curr, 0, 15);
+    curr.clear();
+
+    colorCell(10, 4, CELL_SIZE, 0, 2);
+    curr.push_back("Pennsyl...");
+    curr.push_back("Avenue");
+    curr.push_back("Price:300$");
+    writeMultilineInCell(10, 4, CELL_SIZE, curr, 0, 2);
+    curr.clear();
+
+    colorCell(10, 5, CELL_SIZE, 0, 15);
+    curr.push_back("Black");
+    curr.push_back("Van");
+    curr.push_back("Price:200$");
+    writeMultilineInCell(10, 5, CELL_SIZE, curr, 0, 15);
+    curr.clear();
+
+    colorCell(10, 6, CELL_SIZE, 0, 15);
+    curr.push_back("Draw");
+    curr.push_back("Card");
+    writeMultilineInCell(10, 6, CELL_SIZE, curr, 0, 15);
+    curr.clear();
+
+    colorCell(10, 7, CELL_SIZE, 0, 1);
+    curr.push_back("Park");
+    curr.push_back("Place");
+    curr.push_back("Price:350$");
+    writeMultilineInCell(10, 7, CELL_SIZE, curr, 0, 1);
+    curr.clear();
+
+    colorCell(10, 8, CELL_SIZE, 0, 15);
+    curr.push_back("Draw");
+    curr.push_back("Card");
+    writeMultilineInCell(10, 8, CELL_SIZE, curr, 0, 15);
+    curr.clear();
+
+    colorCell(10, 9, CELL_SIZE, 0, 1);
+    curr.push_back("Boardwalk");
+    curr.push_back("Price:400$");
+    writeMultilineInCell(10, 9, CELL_SIZE, curr, 0, 1);
+    curr.clear();
+
+    colorCell(10, 10, CELL_SIZE, 0, 15);
+    writeInCell(10, 10, CELL_SIZE, "Start", 0, 15);
+
+    cout << endl;
 }
 
 void Board::drawGrid(int n, int cellSize) {
