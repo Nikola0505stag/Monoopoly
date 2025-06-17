@@ -21,7 +21,7 @@ void Board::fillCells() const
    
 
     //colorCell(10, 10, CELL_SIZE, 0, 15);
-    
+    gotoxy(0, 0);
     colorCell(9, 10, CELL_SIZE, 15, 0);
     curr.push_back("Med...");
     curr.push_back("Avenue");
@@ -477,5 +477,57 @@ void Board::colorCell(int cellX, int cellY, int cellSize, WORD fg, WORD bg) cons
     setColor(7, 0); // reset to default (бял текст, черен фон)
 }
 
+void Board::showPlayer(Player* player)
+{
+
+    int index = player->getPosition();
+
+    if (index >= 0 && index <= 10) {  // долен ред (отдясно наляво)
+        int x = 10 - index;
+        int y = 10;
+        colorCellPerson(x, y, CELL_SIZE, 0, 8);
+    }
+    else if (index >= 11 && index <= 20) {  // лява колона (отдолу нагоре)
+        int x = 0;
+        int y = 10 - (index - 10);
+        colorCellPerson(x, y, CELL_SIZE, 0, 8);
+    }
+    else if (index >= 21 && index <= 30) {  // горен ред (отляво надясно)
+        int x = index - 20;
+        int y = 0;
+        colorCellPerson(x, y, CELL_SIZE, 0, 8);
+    }
+    else if (index >= 31 && index <= 39) {  // дясна колона (отгоре надолу)
+        int x = 10;
+        int y = index - 30;
+        colorCellPerson(x, y, CELL_SIZE, 0, 8);
+    }
+    else {
+        throw std::out_of_range("Player position index out of range");
+    }
+
+}
+
+void Board::moveCursorToBottom() const {
+    CONSOLE_SCREEN_BUFFER_INFO csbi;
+    GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
+
+    // Преместване в най-долния ред, колона 0
+    int bottomY = csbi.srWindow.Bottom;
+    gotoxy(0, bottomY);
+}
+
+void Board::colorCellPerson(int cellX, int cellY, int cellSize, WORD fg, WORD bg) const
+{
+    int cellHeight = cellSize / 3;
+
+    int posX = cellX * cellSize + cellSize - 1;      // Най-дясната колона на клетката
+    int posY = cellY * (cellHeight + 1);             // Най-горният ред на клетката
+
+    gotoxy(posX, posY);
+    setColor(fg, bg);
+    std::cout << "P";
+    setColor(7, 0);  // ресет на цвета
+}
 
 

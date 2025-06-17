@@ -28,4 +28,10 @@ public:
 		const MyVector<MyString>& lines,
 		WORD fg, WORD bg) const;
 	void colorCell(int cellX, int cellY, int cellSize, WORD fg, WORD bg) const;
+
+	void showPlayer(Player* player);
+
+	void moveCursorToBottom() const;
+
+	void colorCellPerson(int cellX, int cellY, int cellSize, WORD fg, WORD bg) const;
 };

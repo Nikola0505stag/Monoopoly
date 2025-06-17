@@ -80,7 +80,12 @@ int main() {
 	
 	board.fillCells();
 	cin.get();
-	//board.gotoxy(0, 71);
+	cout << endl << endl;
+	cout << players[0];
+	players[0].setPosition(21);
+	board.showPlayer(&players[0]);
+	//board.gotoxy(0, 90);
+	board.moveCursorToBottom();
 
 	return 0;
 }
