@@ -27,65 +27,38 @@ int main() {
 	players[1].setName("Player2");
 	players[2].setName("Player3");
 
-	//cout << players[0] << endl;
-	//cout << players[1] << endl;
-	//cout << players[2] << endl;
-
 	Deck deck;
 	deck.fillDeck(3, players);
 	deck.shuffle();
-	//deck.printDeck();
+	deck.printDeck();
 
 	Fields fields;
 	fields.setDeck(&deck);
 	fields.fillFields();
-	//cout << endl << endl;
-	//cout << endl << endl;
-	//fields.printFields();
-
-	////fields[39]->applyEffect(players[0]);
-	////cout << endl << endl;
-	////cout << players[0] << endl;
-	////cout << players[1] << endl;
-	////cout << players[2] << endl;
-
-	//cout << endl << endl;
-	//Dice dice;
-	//dice.rollingADice();
-	//cout << dice.getSum();
-	//
-	//players[0].setPosition(players[0].getPosition() + dice.getSum());
-
-	//cout << players[0] << endl;
-	//cout << players[1] << endl;
-	//cout << players[2] << endl;
-
-	//fields[players[0].getPosition()]->applyEffect(players[0]);
-	//cout << players[0] << endl;
-	//cout << players[1] << endl;
-	//cout << players[2] << endl;
-
-
-	Board board;
-	board.setFields(&fields);
-	//board.printBoard();
-	const int n = 11, cellSize = 10;
-	board.drawGrid(n, cellSize);
-	MyVector<MyString> lines;
-	lines.push_back("Test1");
-	lines.push_back("Test 2");
-	//board.gotoxy(0, 0);
-	//board.writeInCell(2,2, cellSize, "Start", 10, 0);
-	//board.writeMultilineInCell(10,0, cellSize, lines,10, 0);
-	
-	board.fillCells();
-	cin.get();
 	cout << endl << endl;
-	cout << players[0];
-	players[0].setPosition(21);
-	board.showPlayer(&players[0]);
-	//board.gotoxy(0, 90);
-	board.moveCursorToBottom();
+	cout << endl << endl;
+	fields.printFields();
+
+	Dice dice;
+	dice.rollingADice();
+	cout << dice.getSum() << endl;
+	
+	players[0].move(&dice);
+
+	dice.rollingADice();
+	cout << dice.getSum() << endl;
+	players[1].move(&dice);
+
+	cout << players[0] << endl;
+	cout << players[1] << endl;
+	cout << players[2] << endl;
+
+	//Board board;
+	//board.setFields(&fields);
+	//const int n = 11, cellSize = 10;
+	//board.drawGrid(n, cellSize);
+	//board.fillCells();
+	//board.moveCursorToBottom();
 
 	return 0;
 }

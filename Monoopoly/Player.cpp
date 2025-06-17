@@ -58,6 +58,11 @@ bool Player::getInPrison() const
     return inPrison;
 }
 
+void Player::move(Dice* dice)
+{
+	setPosition(getPosition() + dice->getSum());
+}
+
 void Player::prisoner()
 {
     setInPrison(getInPrison() -1);

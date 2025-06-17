@@ -1,6 +1,7 @@
 #pragma once
 #define START_MONEY 1500
 #include "MyString.h"
+#include "Dice.h"
 
 class Player
 {
@@ -27,6 +28,8 @@ public:
 
 	void setInPrison(bool inPrison);
 	bool getInPrison() const;
+
+	void move(Dice* dice);
 
 	void prisoner();
 };
