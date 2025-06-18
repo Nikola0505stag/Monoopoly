@@ -18,6 +18,7 @@ enum Color{
 class Property : public Field 
 {
 	unsigned int price;
+	unsigned int pricePerNight;
 	Player* owner;
 	unsigned int priceHouse;
 	unsigned int priceCastle;
@@ -25,7 +26,7 @@ class Property : public Field
 
 public:
 	Property();
-	Property(size_t index, const MyString& description, unsigned int price,
+	Property(size_t index, const MyString& description,unsigned int pricePerNight, unsigned int price,
 		unsigned int priceHouse, unsigned int priceCastle, Player* player, Color color);
 
 
@@ -34,10 +35,12 @@ public:
 	void setPriceCastle(unsigned int priceCastle);
 	void setPlayer(Player* player);
 	void setColor(Color color);
+	void setPricePerNight(unsigned int pricePerNight);
 
 	unsigned int getPrice() const;
 	unsigned int getPriceHouse() const;
 	unsigned int getPriceCastle() const;
+	unsigned int getPricePerNight() const;
 	Color getColor() const;
 
 	Player* getOwner() const;

@@ -43,9 +43,10 @@ int Player::getPosition() const
 
 void Player::setPosition(int position)
 {
-    if (position < 0)
-        throw std::invalid_argument("Position cannot be negative.");
-    this->position = position;
+    //if (position < 0)
+        //throw std::invalid_argument("Position cannot be negative.");
+
+    this->position = (position % 40 + 40) % 40;
 }
 
 void Player::setInPrison(bool inPrison)

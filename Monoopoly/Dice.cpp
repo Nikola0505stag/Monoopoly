@@ -13,6 +13,11 @@ void Dice::rollingADice()
 	secondDie = rand() % 6 + 1;
 }
 
+void Dice::rollOneDice()
+{
+	firstDie = rand() % 6 + 1;
+}
+
 unsigned int Dice::getFirstDie() const
 {
 	return firstDie;

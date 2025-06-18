@@ -12,6 +12,7 @@ public:
 
 	Dice();
 	void rollingADice();
+	void rollOneDice();
 
 	unsigned int getFirstDie() const;
 	unsigned int getSecondDie() const;

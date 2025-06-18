@@ -54,5 +54,9 @@ void CardField::applyEffect(Player& player)
 		throw std::invalid_argument("Deck is empty.");
 
 	Card* card = deck->drawCard();
+
+	std::cout << std::endl;
+	card->print();
+	std::cout << std::endl;
 	card->applyEffect(player);
 }

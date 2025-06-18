@@ -49,16 +49,52 @@ int main() {
 	cout << dice.getSum() << endl;
 	players[1].move(&dice);
 
+	dice.rollingADice();
+	cout << dice.getSum() << endl;
+	players[2].move(&dice);
+
 	cout << players[0] << endl;
 	cout << players[1] << endl;
 	cout << players[2] << endl;
 
-	//Board board;
-	//board.setFields(&fields);
-	//const int n = 11, cellSize = 10;
-	//board.drawGrid(n, cellSize);
-	//board.fillCells();
-	//board.moveCursorToBottom();
+	players[0].setPosition(39);
+	players[2].setPosition(39);
+	cout << endl;
+	fields[players[0].getPosition()]->print();
+	cout << endl;
+	fields[players[0].getPosition()]->applyEffect(players[0]);
+	fields[players[2].getPosition()]->applyEffect(players[2]);
+	cout << players[0] << endl << players[2];
 
+	/*system("pause");
+	Board board;
+	board.setFields(&fields);
+	const int n = 11, cellSize = 10;
+	board.drawGrid(n, cellSize);
+	board.fillCells();
+	board.showPlayer(&players[0]);
+	board.showPlayer(&players[1]);
+	board.showPlayer(&players[2]);
+
+	board.moveCursorToBottom();
+	fields[players[0].getPosition()]->applyEffect(players[0]);
+	fields[players[1].getPosition()]->applyEffect(players[1]);
+	fields[players[2].getPosition()]->applyEffect(players[2]);
+
+	std::cout << endl << endl;
+	cout << players[0] << endl;
+	cout << players[1] << endl;
+	cout << players[2] << endl;
+
+	system("pause");
+	system("cls");
+	
+	board.drawGrid(n, cellSize);
+	board.fillCells();
+	board.showPlayer(&players[0]);
+	board.showPlayer(&players[1]);
+	board.showPlayer(&players[2]);
+   */
+	//board.moveCursorToBottom();
 	return 0;
 }

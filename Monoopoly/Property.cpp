@@ -7,9 +7,10 @@ Property::Property() : Field()
     setPriceHouse(0);
     setPriceCastle(0);
     setColor(Color::DEFAULT_COLOR);
+    setPricePerNight(0);
 }
 
-Property::Property(size_t index, const MyString& description, unsigned int price,
+Property::Property(size_t index, const MyString& description, unsigned int pricePerNight, unsigned int price,
     unsigned int priceHouse, unsigned int priceCastle, Player* player, Color color)
     : Field(index, description)
 {
@@ -18,6 +19,7 @@ Property::Property(size_t index, const MyString& description, unsigned int price
     setPriceCastle(priceCastle);
 	setPriceHouse(priceHouse);
     setColor(color);
+    setPricePerNight(pricePerNight);
 }
 
 void Property::setPrice(unsigned int price)
@@ -45,6 +47,13 @@ void Property::setColor(Color color)
     this->color = color;
 }
 
+void Property::setPricePerNight(unsigned int pricePerNight)
+{
+    if(pricePerNight<0)
+		throw std::invalid_argument("Price per night cannot be negative.");
+	this->pricePerNight = pricePerNight;
+}
+
 unsigned int Property::getPrice() const
 {
     return price;
@@ -58,6 +67,11 @@ unsigned int Property::getPriceHouse() const
 unsigned int Property::getPriceCastle() const
 {
     return priceCastle;
+}
+
+unsigned int Property::getPricePerNight() const
+{
+    return pricePerNight;
 }
 
 Color Property::getColor() const
@@ -124,6 +138,10 @@ void Property::applyEffect(Player& player)
         }
     }
     else {
-        throw std::invalid_argument("Property already owned by another player.\n");
+        //throw std::invalid_argument("Property already owned by another player.\n");
+        Dice dice;
+        dice.rollOneDice();
+		std::cout << "\nDays u would stay on this property: " << dice.getSum() << "\n";
+        player.setMoney(player.getMoney() - dice.getSum() * this->pricePerNight);
     }
 }
