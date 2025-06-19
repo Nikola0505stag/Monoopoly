@@ -1,3 +1,4 @@
+
 #pragma once
 #include "Field.h"
 #include "StartField.h"
@@ -14,7 +15,7 @@ class Fields
 	Field** fields;
 	size_t size;
 	size_t capacity = 40;
-	
+
 	void copyFrom(const Fields& other);
 	void moveFrom(Fields&& other);
 	void free();
@@ -31,7 +32,7 @@ public:
 	void addField(Field* field);
 	void printFields() const;
 	void fillFields();
-	
+
 	size_t getSize() const;
 
 	Field* operator[](size_t index) const;
@@ -39,4 +40,3 @@ public:
 	void setDeck(Deck* deck);
 	Deck* getDeck() const;
 };
-

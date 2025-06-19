@@ -1,5 +1,4 @@
-﻿
-#include "Board.h"
+﻿#include "Board.h"
 using namespace std;
 
 void Board::gotoxy(int x, int y) const
@@ -18,7 +17,7 @@ void Board::fillCells() const
     MyVector<MyString> curr;
 
 
-   
+
 
     //colorCell(10, 10, CELL_SIZE, 0, 15);
     gotoxy(0, 0);
@@ -310,12 +309,12 @@ void Board::drawGrid(int n, int cellSize) {
     for (int i = 1; i < n * cellSize; i++) {
         if (i % cellSize == 0 && i != cellSize && i != n * cellSize - cellSize)
             std::cout << char(193);//Т-образна долна
-		else if (i != cellSize && i != n * cellSize - cellSize)
-			std::cout << char(196); // хоризонтална линия
-		else
-		    std::cout << char(197); // Централна връзка
+        else if (i != cellSize && i != n * cellSize - cellSize)
+            std::cout << char(196); // хоризонтална линия
+        else
+            std::cout << char(197); // Централна връзка
     }
-	std::cout << char(180) << std::endl; // Т-образна дясна
+    std::cout << char(180) << std::endl; // Т-образна дясна
     for (int q = 0; q < n - 3; q++) {
         for (int j = 0; j < cellSize / 3; j++) {
             for (int i = 0; i <= n * cellSize; i++) {
@@ -352,7 +351,7 @@ void Board::drawGrid(int n, int cellSize) {
         }
         std::cout << std::endl;
     }
-   
+
     for (int i = 0; i <= cellSize * n; i++) {
         if (i == cellSize || i == (n - 1) * cellSize)
             cout << char(197); // Хоризонтална линия
@@ -369,22 +368,22 @@ void Board::drawGrid(int n, int cellSize) {
     for (int j = 0; j < cellSize / 3; j++) {
         for (int i = 0; i <= n * cellSize; i++) {
             if (i % cellSize == 0)
-				std::cout << char(179); // Вертикална линия
+                std::cout << char(179); // Вертикална линия
             else
                 cout << " ";
 
         }
         std::cout << std::endl;
     }
-   for (int i = 0; i <= n * cellSize; i++) {
+    for (int i = 0; i <= n * cellSize; i++) {
         if (i == 0)
             std::cout << char(192); // долен ляв ъгъл
         else if (i == n * cellSize)
-			std::cout << char(217); // долен десен ъгъл
-        else if (i % cellSize == 0) 
-			std::cout << char(193); // Т-образна долна
-        else 
-			std::cout << char(196); // долна хоризонтална линия
+            std::cout << char(217); // долен десен ъгъл
+        else if (i % cellSize == 0)
+            std::cout << char(193); // Т-образна долна
+        else
+            std::cout << char(196); // долна хоризонтална линия
     }
 }
 
@@ -392,7 +391,7 @@ void Board::writeInCell(int cellX, int cellY, int cellSize,
     const char text[], WORD fg, WORD bg) const {
     int cellHeight = cellSize / 3;
 
-    int x = cellX * (cellSize) + (cellSize - strlen(text)) / 2 + 1;
+    int x = cellX * (cellSize)+(cellSize - strlen(text)) / 2 + 1;
     int y = cellY * (cellHeight + 1) + cellHeight / 2 + 1;
 
     gotoxy(x, y);
@@ -434,7 +433,7 @@ void Board::writeMultilineInCell(int cellX, int cellY, int cellSize,
     const MyVector<MyString>& lines, WORD fg, WORD bg) const {
 
     int cellHeight = cellSize / 3;
-    int topLeftX = cellX * (cellSize) + 1;
+    int topLeftX = cellX * (cellSize)+1;
     int topLeftY = cellY * (cellHeight + 1) + 1;
 
     int totalLines = lines.getSize();
@@ -462,7 +461,7 @@ void Board::colorCell(int cellX, int cellY, int cellSize, WORD fg, WORD bg) cons
     int cellHeight = cellSize / 3;
 
     // Горен ляв ъгъл на клетката (вътре в рамката)
-    int startX = cellX * (cellSize) + 1;
+    int startX = cellX * (cellSize)+1;
     int startY = cellY * (cellHeight + 1) + 1;
 
     setColor(fg, bg);
@@ -529,5 +528,3 @@ void Board::colorCellPerson(int cellX, int cellY, int cellSize, WORD fg, WORD bg
     std::cout << "P";
     setColor(7, 0);  // ресет на цвета
 }
-
-

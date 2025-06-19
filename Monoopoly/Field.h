@@ -1,3 +1,4 @@
+
 #pragma once
 #include "MyString.h"
 #include "Player.h"
@@ -25,4 +26,3 @@ public:
 
 	virtual void applyEffect(Player& player) = 0;
 };
-

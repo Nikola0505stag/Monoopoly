@@ -7,7 +7,7 @@ class Player
 {
 	MyString name;
 	int money;
-	int position;	
+	int position;
 	bool inPrison;
 
 public:
@@ -32,7 +32,6 @@ public:
 	void move(Dice* dice);
 
 	void prisoner();
-	
+
 	void prison();
 };
-

@@ -1,3 +1,4 @@
+
 #include "Field.h"
 
 Field::Field()
@@ -29,5 +30,5 @@ MyString Field::getDescription() const
 
 void Field::setDescription(const MyString& description)
 {
-	this->description = description;
+    this->description = description;
 }

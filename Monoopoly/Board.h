@@ -3,6 +3,7 @@
 #include <windows.h>
 #include "MyVector.hpp"
 #include "MyString.h"
+//#include <iostream>
 #define CELL_SIZE 10
 
 class Board
