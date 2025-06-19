@@ -73,18 +73,16 @@ void Monopoly::drawPlayersOnBoard()
 void Monopoly::start()
 {
 	do {
+		system("pause");
+		system("cls");
 		for (int i = 0; i < players.getSize(); i++) {
-			std::cout << "Player " << (i + 1) << std::endl;
+			//std::cout << "Player " << (i + 1) << std::endl;
 			turn(players[i]);
 		}
 		std::cout << std::endl;
 		for (int i = 0; i < players.getSize(); i++) {
 			std::cout << players[i] << "\n";
 		}
-		system("pause");
-		system("cls");
-		drawBoard();
-		drawPlayersOnBoard();
 	} while (!isGameOver);
 }
 
@@ -92,10 +90,19 @@ void Monopoly::turn(Player& player)
 {
 	
 	do {
+		system("pause");
+		system("cls");
+
 		std::cout << std::endl;
+		std::cout << player.getName() << "'s turn.\n";
 		dice.rollingADice();
 		std::cout << dice.getFirstDie() << " " << dice.getSecondDie() << "\n";
 		player.move(&dice);
+
+		system("pause");
+		system("cls");
+		drawBoard();
+		drawPlayersOnBoard();
 
 		std::cout << std::endl;
 		fields[player.getPosition()]->print();
