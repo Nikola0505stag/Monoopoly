@@ -55,10 +55,12 @@ int main() {
 	cout << endl << endl;
 	fields.printFields();
 
+
+
 	Dice dice;
+
 	dice.rollingADice();
 	cout << dice.getSum() << endl;
-
 	players[0].move(&dice);
 
 	dice.rollingADice();
@@ -73,8 +75,8 @@ int main() {
 	cout << players[1] << endl;
 	cout << players[2] << endl;
 
-	players[0].setPosition(30);
-	fields[players[0].getPosition()]->applyEffect(players[0]);
+	//players[0].setPosition(30);
+	//fields[players[0].getPosition()]->applyEffect(players[0]);
 
 
 	//players[0].prison();
@@ -82,17 +84,18 @@ int main() {
 	//players[0].move(&dice);
 
 
-	system("pause");
-	Board board;
-	board.setFields(&fields);
-	const int n = 11, cellSize = 10;
-	board.drawGrid(n, cellSize);
-	board.fillCells();
-	board.showPlayer(&players[0]);
-	board.showPlayer(&players[1]);
-	board.showPlayer(&players[2]);
 
-	board.moveCursorToBottom();
+	//system("pause");
+	//Board board;
+	//board.setFields(&fields);
+	//const int n = 11, cellSize = 10;
+	//board.drawGrid(n, cellSize);
+	//board.fillCells();
+	//board.showPlayer(&players[0]);
+	//board.showPlayer(&players[1]);
+	//board.showPlayer(&players[2]);
+	//
+	//board.moveCursorToBottom();
 	fields[players[0].getPosition()]->applyEffect(players[0]);
 	fields[players[1].getPosition()]->applyEffect(players[1]);
 	fields[players[2].getPosition()]->applyEffect(players[2]);
@@ -105,12 +108,20 @@ int main() {
 	system("pause");
 	system("cls");
 
-	board.drawGrid(n, cellSize);
-	board.fillCells();
-	board.showPlayer(&players[0]);
-	board.showPlayer(&players[1]);
-	board.showPlayer(&players[2]);
+	//players[0].sellPropertyToTheBank(fields);
 
-	board.moveCursorToBottom();
+	//system("pause");
+	//system("cls");
+	//
+	//board.drawGrid(n, cellSize);
+	//board.fillCells();
+	//board.showPlayer(&players[0]);
+	//board.showPlayer(&players[1]);
+	//board.showPlayer(&players[2]);
+	//
+	//board.moveCursorToBottom();
+	players[0].setPosition(1);
+	fields[players[0].getPosition()]->applyEffect(players[0]);
+	cout << fields.doesPlayerOwnProperty(&players[0], "Mediterranean Avenue");
 	return 0;
 }

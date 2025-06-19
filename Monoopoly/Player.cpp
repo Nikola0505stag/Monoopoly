@@ -110,6 +110,7 @@ void Player::prison()
 }
 
 
+
 std::ostream& operator<<(std::ostream& os, const Player& player)
 {
     os << player.name << "\t" << player.money << "\t" << player.position << "\t";

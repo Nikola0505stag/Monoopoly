@@ -1,4 +1,3 @@
-
 #include "Fields.h"
 
 void Fields::copyFrom(const Fields& other)
@@ -157,4 +156,15 @@ void Fields::setDeck(Deck* deck)
 Deck* Fields::getDeck() const
 {
 	return deck;
+}
+
+bool Fields::doesPlayerOwnProperty(Player* player, const MyString& propertyName) const
+{
+	for (int i = 0; i < size; i++) {
+		Property* prop = dynamic_cast<Property*>(fields[i]);
+		if (prop && prop->getDescription() == propertyName) {
+			return prop->getOwner() == player;
+		}
+	}
+	return false;
 }

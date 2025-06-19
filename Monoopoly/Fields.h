@@ -1,4 +1,3 @@
-
 #pragma once
 #include "Field.h"
 #include "StartField.h"
@@ -39,4 +38,6 @@ public:
 
 	void setDeck(Deck* deck);
 	Deck* getDeck() const;
+
+	bool doesPlayerOwnProperty(Player* player, const MyString& propertyName) const;
 };
