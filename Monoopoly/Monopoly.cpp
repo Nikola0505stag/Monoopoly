@@ -70,3 +70,23 @@ void Monopoly::drawPlayersOnBoard()
 	board.moveCursorToBottom();
 }
 
+void Monopoly::start()
+{
+	turn(players[0]);
+}
+
+void Monopoly::turn(Player& player)
+{
+	
+	do {
+		std::cout << std::endl;
+		dice.rollingADice();
+		std::cout << dice.getFirstDie() << " " << dice.getSecondDie() << "\n";
+		player.move(&dice);
+
+		std::cout << std::endl;
+		fields[player.getPosition()]->print();
+		fields[player.getPosition()]->applyEffect(player);
+	} while (dice.getFirstDie() == dice.getSecondDie());
+}
+

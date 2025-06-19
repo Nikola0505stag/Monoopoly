@@ -14,11 +14,15 @@ class Monopoly
 	Dice dice;
 	Board board;
 
+	bool pair();
+
 	//void vectorToArray(Player* playersArray);
 public:
 	void playersInput();
 	void makeGame();
 	void drawBoard();
 	void drawPlayersOnBoard();
+	void start();
+	void turn(Player& player);
 };
 
