@@ -57,16 +57,16 @@ int main() {
 	cout << players[1] << endl;
 	cout << players[2] << endl;
 
-	players[0].setPosition(39);
-	players[2].setPosition(39);
-	cout << endl;
-	fields[players[0].getPosition()]->print();
-	cout << endl;
+	players[0].setPosition(30);
 	fields[players[0].getPosition()]->applyEffect(players[0]);
-	fields[players[2].getPosition()]->applyEffect(players[2]);
-	cout << players[0] << endl << players[2];
 
-	/*system("pause");
+	
+	players[0].prison();
+	//dice.rollingADice();
+	//players[0].move(&dice);
+
+
+	system("pause");
 	Board board;
 	board.setFields(&fields);
 	const int n = 11, cellSize = 10;
@@ -75,17 +75,17 @@ int main() {
 	board.showPlayer(&players[0]);
 	board.showPlayer(&players[1]);
 	board.showPlayer(&players[2]);
-
+	
 	board.moveCursorToBottom();
 	fields[players[0].getPosition()]->applyEffect(players[0]);
 	fields[players[1].getPosition()]->applyEffect(players[1]);
 	fields[players[2].getPosition()]->applyEffect(players[2]);
-
+	
 	std::cout << endl << endl;
 	cout << players[0] << endl;
 	cout << players[1] << endl;
 	cout << players[2] << endl;
-
+	
 	system("pause");
 	system("cls");
 	
@@ -94,7 +94,7 @@ int main() {
 	board.showPlayer(&players[0]);
 	board.showPlayer(&players[1]);
 	board.showPlayer(&players[2]);
-   */
-	//board.moveCursorToBottom();
+   
+	board.moveCursorToBottom();
 	return 0;
 }

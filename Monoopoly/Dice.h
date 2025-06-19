@@ -14,6 +14,8 @@ public:
 	void rollingADice();
 	void rollOneDice();
 
+	bool sameDice();
+
 	unsigned int getFirstDie() const;
 	unsigned int getSecondDie() const;
 

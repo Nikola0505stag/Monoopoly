@@ -32,5 +32,7 @@ public:
 	void move(Dice* dice);
 
 	void prisoner();
+	
+	void prison();
 };
 

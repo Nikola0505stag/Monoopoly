@@ -18,6 +18,20 @@ void Dice::rollOneDice()
 	firstDie = rand() % 6 + 1;
 }
 
+bool Dice::sameDice()
+{
+	rollingADice();
+	std::cout << "First die: " << firstDie << ", Second die: " << secondDie << std::endl;
+	if (firstDie == secondDie)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
 unsigned int Dice::getFirstDie() const
 {
 	return firstDie;
