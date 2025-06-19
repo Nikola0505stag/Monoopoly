@@ -137,6 +137,7 @@
     <ClInclude Include="GoJail.h" />
     <ClInclude Include="GroupPaymentCard.h" />
     <ClInclude Include="Jail.h" />
+    <ClInclude Include="Monopoly.h" />
     <ClInclude Include="MovePositionCard.h" />
     <ClInclude Include="MyQueue.hpp" />
     <ClInclude Include="MyString.h" />
@@ -158,6 +159,7 @@
     <ClCompile Include="GoJail.cpp" />
     <ClCompile Include="GroupPaymentCard.cpp" />
     <ClCompile Include="Jail.cpp" />
+    <ClCompile Include="Monopoly.cpp" />
     <ClCompile Include="MovePositionCard.cpp" />
     <ClCompile Include="MyString.cpp" />
     <ClCompile Include="Parking.cpp" />

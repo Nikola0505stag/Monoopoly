@@ -232,6 +232,37 @@ MyString MyString::substr(unsigned begin, unsigned howMany)
 	return res;
 }
 
+MyString MyString::intToMyString(int number)
+{
+	if (number == 0)
+		return MyString("0");
+
+	char buffer[20]; // стига за 64-битово число
+	int index = 0;
+	bool isNegative = false;
+
+	if (number < 0) {
+		isNegative = true;
+		number = -number;
+	}
+
+	while (number > 0) {
+		buffer[index++] = '0' + (number % 10);
+		number /= 10;
+	}
+
+	if (isNegative)
+		buffer[index++] = '-';
+
+	buffer[index] = '\0';
+
+	// обръщане на стринга
+	for (int i = 0; i < index / 2; ++i)
+		std::swap(buffer[i], buffer[index - i - 1]);
+
+	return MyString(buffer);
+}
+
 
 bool operator==(const MyString& lhs, const MyString& rhs)
 {
