@@ -14,6 +14,8 @@ class Monopoly
 	Dice dice;
 	Board board;
 
+	bool isGameOver = false;
+
 	bool pair();
 
 	//void vectorToArray(Player* playersArray);

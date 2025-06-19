@@ -72,7 +72,20 @@ void Monopoly::drawPlayersOnBoard()
 
 void Monopoly::start()
 {
-	turn(players[0]);
+	do {
+		for (int i = 0; i < players.getSize(); i++) {
+			std::cout << "Player " << (i + 1) << std::endl;
+			turn(players[i]);
+		}
+		std::cout << std::endl;
+		for (int i = 0; i < players.getSize(); i++) {
+			std::cout << players[i] << "\n";
+		}
+		system("pause");
+		system("cls");
+		drawBoard();
+		drawPlayersOnBoard();
+	} while (!isGameOver);
 }
 
 void Monopoly::turn(Player& player)
