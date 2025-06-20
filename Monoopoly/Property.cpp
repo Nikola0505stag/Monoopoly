@@ -143,5 +143,6 @@ void Property::applyEffect(Player& player)
         dice.rollOneDice();
 		std::cout << "\nDays u would stay on this property: " << dice.getSum() << "\n";
         player.setMoney(player.getMoney() - dice.getSum() * this->pricePerNight);
+        this->owner->setMoney(this->owner->getMoney() + dice.getSum() * this->pricePerNight);
     }
 }

@@ -1,4 +1,4 @@
-#include "Monopoly.h"
+﻿#include "Monopoly.h"
 
 
 void Monopoly::playersInput()
@@ -30,17 +30,12 @@ void Monopoly::playersInput()
 
 void Monopoly::makeGame()
 {
-	Player* playersArray = new Player[players.getSize()];
+	//Player* playersArray = new Player[players.getSize()];
 
-	for (int i = 0; i < players.getSize(); i++) {
-		playersArray[i] = players[i];
-	}
+	Player* playerArray = &players[0];
 
-	//for (int i = 0; i < players.getSize(); i++) {
-	//	std::cout << "in \t";
-	//	std::cout << playersArray[i] << "\n";
-	//}
-	deck.fillDeck(players.getSize(), playersArray);
+	deck.fillDeck(players.getSize(), playerArray);
+
 	deck.shuffle();
 	deck.printDeck();
 	
@@ -108,5 +103,17 @@ void Monopoly::turn(Player& player)
 		fields[player.getPosition()]->print();
 		fields[player.getPosition()]->applyEffect(player);
 	} while (dice.getFirstDie() == dice.getSecondDie());
+}
+
+void Monopoly::test()
+{
+
+	players[0].setPosition(2);
+	fields[players[0].getPosition()]->print();
+	fields[players[0].getPosition()]->applyEffect(players[0]);
+
+	for (int i = 0; i < players.getSize(); i++) {
+		std::cout << players[i] << "\n";
+	}
 }
 

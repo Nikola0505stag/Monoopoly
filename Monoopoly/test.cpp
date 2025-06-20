@@ -48,5 +48,6 @@ int main() {
 	game.drawBoard();
 	game.drawPlayersOnBoard();
 	game.start();
+	//game.test();
 	return 0;
 }

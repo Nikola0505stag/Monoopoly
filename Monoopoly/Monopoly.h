@@ -26,5 +26,7 @@ public:
 	void drawPlayersOnBoard();
 	void start();
 	void turn(Player& player);
+
+	void test();
 };
 
