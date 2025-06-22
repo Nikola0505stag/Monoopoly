@@ -106,6 +106,12 @@ void Monopoly::turn(Player& player)
 	} while (dice.getFirstDie() == dice.getSecondDie());
 }
 
+void Monopoly::acrossStart(Player& player, size_t prePos, size_t afterPos)
+{
+	if(afterPos < prePos)
+		player.setMoney(player.getMoney() + 200);
+}
+
 void Monopoly::test()
 {
 	std::cin.ignore();

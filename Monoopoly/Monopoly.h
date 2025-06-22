@@ -29,6 +29,8 @@ public:
 	void start();
 	void turn(Player& player);
 
+	void acrossStart(Player& player,size_t prePos, size_t afterPos);
+
 	void test();
 };
 

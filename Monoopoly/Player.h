@@ -1,9 +1,7 @@
 #pragma once
 #define START_MONEY 1500
 #include "MyString.h"
-//class Fields;
 #include "Dice.h"
-//#include "Fields.h"
 
 class Player
 {
