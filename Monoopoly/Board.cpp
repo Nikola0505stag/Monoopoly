@@ -282,8 +282,9 @@ void Board::fillCells() const
 
     cout << endl;
 }
-
+// system("mode con: cols=200 rows=100")
 void Board::drawGrid(int n, int cellSize) {
+    system("mode con: cols=200 rows=100");
     gotoxy(0, 0);
     std::cout << char(218); // горен ляв ъгъл
     for (int i = 1; i < n * cellSize; i++) {

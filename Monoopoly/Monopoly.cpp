@@ -45,6 +45,7 @@ void Monopoly::makeGame()
 	fields.printFields();
 	
 	board.setFields(&fields);
+	bank.setFields(&fields);
 }
 
 void Monopoly::drawBoard()
@@ -107,13 +108,25 @@ void Monopoly::turn(Player& player)
 
 void Monopoly::test()
 {
+	std::cin.ignore();
+	char buffer[1024];
+	std::cin.getline(buffer, 1024);
+	std::cout << buffer;
+	MyString name = buffer;
+	std::cout << name;
 
-	players[0].setPosition(2);
-	fields[players[0].getPosition()]->print();
-	fields[players[0].getPosition()]->applyEffect(players[0]);
-
-	for (int i = 0; i < players.getSize(); i++) {
-		std::cout << players[i] << "\n";
-	}
+	players[0].setPosition(31);
+	fields[31]->applyEffect(players[0]);
+	std::cout << "\n\n\n";
+	std::cout << players[0];
+	std::cout << "\n\n\n";
+	bank.sellProperty(&players[0], name);
+	
+	
+	std::cout << "\n\n\n";
+	fields[31]->print();
+	std::cout << "\n\n\n";
+	std::cout << players[0];
+	
 }
 

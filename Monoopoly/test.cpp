@@ -34,20 +34,23 @@
 #include "Board.h"
 #include "Dice.h"
 #include "Monopoly.h"
+#include "Bank.h"
 
 using namespace std;
 
 int main() {
 
-	
+
+
 	Monopoly game;
 	game.playersInput();
 	game.makeGame();
-	system("pause");
-	system("cls");
-	game.drawBoard();
-	game.drawPlayersOnBoard();
-	game.start();
-	//game.test();
+	//system("pause");
+	//system("cls");
+	//game.drawBoard();
+	//game.drawPlayersOnBoard();
+	//game.start();
+
+	game.test();
 	return 0;
 }

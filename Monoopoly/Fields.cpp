@@ -148,6 +148,8 @@ Field* Fields::operator[](size_t index) const
 	return fields[index];
 }
 
+
+
 void Fields::setDeck(Deck* deck)
 {
 	this->deck = deck;

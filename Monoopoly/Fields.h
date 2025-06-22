@@ -35,6 +35,7 @@ public:
 	size_t getSize() const;
 
 	Field* operator[](size_t index) const;
+	//Field& operator[](size_t index);
 
 	void setDeck(Deck* deck);
 	Deck* getDeck() const;

@@ -5,6 +5,7 @@
 #include "Fields.h"
 #include "Dice.h"
 #include "Board.h"
+#include "Bank.h"
 
 class Monopoly
 {
@@ -13,6 +14,7 @@ class Monopoly
 	Fields fields;
 	Dice dice;
 	Board board;
+	Bank bank;
 
 	bool isGameOver = false;
 

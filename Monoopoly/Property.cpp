@@ -8,6 +8,7 @@ Property::Property() : Field()
     setPriceCastle(0);
     setColor(Color::DEFAULT_COLOR);
     setPricePerNight(0);
+    setMortgaged(false);
 }
 
 Property::Property(size_t index, const MyString& description, unsigned int pricePerNight, unsigned int price,
@@ -20,6 +21,7 @@ Property::Property(size_t index, const MyString& description, unsigned int price
 	setPriceHouse(priceHouse);
     setColor(color);
     setPricePerNight(pricePerNight);
+    setMortgaged(false);
 }
 
 void Property::setPrice(unsigned int price)
@@ -52,6 +54,11 @@ void Property::setPricePerNight(unsigned int pricePerNight)
     if(pricePerNight<0)
 		throw std::invalid_argument("Price per night cannot be negative.");
 	this->pricePerNight = pricePerNight;
+}
+
+void Property::setMortgaged(bool mortgaged)
+{
+	this->mortgaged = mortgaged;
 }
 
 unsigned int Property::getPrice() const
@@ -101,7 +108,9 @@ void Property::print() const
     std::cout << "|------------|\n";
     std::cout << "|" <<getDescription() <<"|\n";
     std::cout << "|    " <<getPrice() << "     |\n";
-    std::cout << "|"  << color<<          "|\n";
+    std::cout << "|      "  << color<<"     |\n";
+    std::cout << "|Mortgaged:"; mortgaged ? std::cout << "Yes" : std::cout << "No";
+    std::cout << "|\n";
     if (owner == nullptr)
         std::cout << "| Player:None|\n";
     else
@@ -114,6 +123,11 @@ void Property::print() const
 Field* Property::clone() const
 {
     return new Property(*this);
+}
+
+bool Property::isMortgaged() const
+{
+    return mortgaged;
 }
 
 void Property::applyEffect(Player& player)

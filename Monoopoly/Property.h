@@ -23,6 +23,7 @@ class Property : public Field
 	unsigned int priceHouse;
 	unsigned int priceCastle;
 	Color color;
+	bool mortgaged;
 
 public:
 	Property();
@@ -36,6 +37,7 @@ public:
 	void setPlayer(Player* player);
 	void setColor(Color color);
 	void setPricePerNight(unsigned int pricePerNight);
+	void setMortgaged(bool mortgaged);
 
 	unsigned int getPrice() const;
 	unsigned int getPriceHouse() const;
@@ -47,6 +49,7 @@ public:
 
 	void print() const override;
 	Field* clone() const override;
+	bool isMortgaged() const;
 
 	// Inherited via Field
 	void applyEffect(Player& player) override;

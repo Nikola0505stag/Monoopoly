@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Bank.h" />
     <ClInclude Include="Board.h" />
     <ClInclude Include="Card.h" />
     <ClInclude Include="CardField.h" />
@@ -149,6 +150,7 @@
     <ClInclude Include="StartField.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Bank.cpp" />
     <ClCompile Include="Board.cpp" />
     <ClCompile Include="Card.cpp" />
     <ClCompile Include="CardField.cpp" />
