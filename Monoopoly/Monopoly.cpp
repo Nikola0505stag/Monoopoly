@@ -114,27 +114,23 @@ void Monopoly::acrossStart(Player& player, size_t prePos, size_t afterPos)
 
 void Monopoly::test()
 {
-	std::cin.ignore();
-	char buffer[1024];
-	std::cin.getline(buffer, 1024);
-	//std::cout << buffer;
-	MyString name = buffer;
-	//std::cout << name;
+	std::cout << "Insert command";
+	MyString command;
+	std::cin >> command;
 
+	Command* cmd = CommandFactory::createCommand(command,*this);
+	if (cmd) {
+		cmd->execute();
+		std::cout << dice.getFirstDie() << dice.getSecondDie();
+	}
+	else {
+		std::cout << "Invalid command.\n";
+	}
 
-	players[0].setPosition(39);
-	//fields[39]->print();
-	fields[39]->applyEffect(players[0]);
-	std::cout << "\n\n\n";
-	std::cout << players[0];
-	std::cout << "\n\n\n";
-	
-	bank.buyCottage(&players[0], name);
-	bank.buyCastle(&players[0], name);
+}
 
-	std::cout << "\n\n\n";
-	std::cout << players[0] << "\n";
-	fields[39]->print();
-	//fields[1]
+Dice& Monopoly::getDice()
+{
+	return dice;
 }
 

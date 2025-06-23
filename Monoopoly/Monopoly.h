@@ -6,6 +6,7 @@
 #include "Dice.h"
 #include "Board.h"
 #include "Bank.h"
+#include "CommandFactory.h"
 
 class Monopoly
 {
@@ -32,5 +33,7 @@ public:
 	void acrossStart(Player& player,size_t prePos, size_t afterPos);
 
 	void test();
+
+	Dice& getDice();
 };
 

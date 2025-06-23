@@ -131,6 +131,8 @@
     <ClInclude Include="Board.h" />
     <ClInclude Include="Card.h" />
     <ClInclude Include="CardField.h" />
+    <ClInclude Include="Command.h" />
+    <ClInclude Include="CommandFactory.h" />
     <ClInclude Include="Deck.h" />
     <ClInclude Include="Dice.h" />
     <ClInclude Include="Field.h" />
@@ -147,6 +149,7 @@
     <ClInclude Include="PaymentCard.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Property.h" />
+    <ClInclude Include="RollDiceCommand.h" />
     <ClInclude Include="StartField.h" />
   </ItemGroup>
   <ItemGroup>
@@ -154,6 +157,8 @@
     <ClCompile Include="Board.cpp" />
     <ClCompile Include="Card.cpp" />
     <ClCompile Include="CardField.cpp" />
+    <ClCompile Include="Command.cpp" />
+    <ClCompile Include="CommandFactory.cpp" />
     <ClCompile Include="Deck.cpp" />
     <ClCompile Include="Dice.cpp" />
     <ClCompile Include="Field.cpp" />
@@ -168,6 +173,7 @@
     <ClCompile Include="PaymentCard.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Property.cpp" />
+    <ClCompile Include="RollDiceCommand.cpp" />
     <ClCompile Include="StartField.cpp" />
     <ClCompile Include="test.cpp" />
   </ItemGroup>

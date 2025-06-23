@@ -52,5 +52,7 @@ int main() {
 	//game.start();
 
 	game.test();
+	game.test();
+	game.test();
 	return 0;
 }
