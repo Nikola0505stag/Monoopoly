@@ -92,4 +92,58 @@ void Bank::buyCastle(Player* player, const MyString& propertyName)
 		throw std::invalid_argument("Property not yours or not found!");
 }
 
+void Bank::sellCottage(Player* player, const MyString& propertyName)
+{
+	if (fields->doesPlayerOwnProperty(player, propertyName)) {
+		for (int i = 0; i < fields->getSize(); i++) {
+			if ((*fields)[i]->getDescription() == propertyName) {
+
+				Property* prop = dynamic_cast<Property*>((*fields)[i]);
+				if (!prop->isMortgaged()) {
+					prop->setCottageCount(prop->getCottageCount() - 1);
+					player->setMoney(player->getMoney() + prop->getPriceHouse());
+					prop->setPricePerNight(prop->getPricePerNight() -
+						prop->getPricePerNight() / 5);
+
+					std::cout << "\n\n";
+					prop->print();
+					std::cout << "\n\n";
+
+				}
+				else
+					std::cout << "\nProperty is mortgaged! You cannot sell a cottage from it.\n\n";
+			}
+		}
+	}
+	else
+		throw std::invalid_argument("Property not yours or not found!");
+}
+
+void Bank::sellCastle(Player* player, const MyString& propertyName)
+{
+	if (fields->doesPlayerOwnProperty(player, propertyName)) {
+		for (int i = 0; i < fields->getSize(); i++) {
+			if ((*fields)[i]->getDescription() == propertyName) {
+
+				Property* prop = dynamic_cast<Property*>((*fields)[i]);
+				if (!prop->isMortgaged()) {
+					prop->setCastleCount(prop->getCastleCount() - 1);
+					player->setMoney(player->getMoney() + prop->getPriceCastle());
+					prop->setPricePerNight(prop->getPricePerNight() -
+						prop->getPricePerNight() / 2);
+
+					std::cout << "\n\n";
+					prop->print();
+					std::cout << "\n\n";
+
+				}
+				else
+					std::cout << "\nProperty is mortgaged! You cannot sell a castle from it.\n\n";
+			}
+		}
+	}
+	else
+		throw std::invalid_argument("Property not yours or not found!");
+}
+
 

@@ -5,6 +5,8 @@
 #include "SellPropertyCommand.h"
 #include "BuyCottageCommand.h"
 #include "BuyCastleCommand.h"
+#include "SellCottageCommand.h"
+#include "SellCastleCommand.h"
 class Monopoly;
 #include <iostream>
 #include "MyString.h"

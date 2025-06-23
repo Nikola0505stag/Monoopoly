@@ -28,7 +28,7 @@ public:
 	void drawBoard();
 	void drawPlayersOnBoard();
 	void start();
-	void turn(Player& player);
+	void turn(Player& player, size_t i);
 
 	void acrossStart(Player& player,size_t prePos, size_t afterPos);
 

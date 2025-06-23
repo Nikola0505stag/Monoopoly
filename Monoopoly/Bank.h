@@ -17,6 +17,8 @@ public:
 	void sellProperty(Player* player, const MyString& propertyName);
 	void buyCottage(Player* player, const MyString& propertyName);
 	void buyCastle(Player* player, const MyString& propertyName);
+	void sellCottage(Player* player, const MyString& propertyName);
+	void sellCastle(Player* player, const MyString& propertyName);
 
 };
 

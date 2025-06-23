@@ -45,16 +45,16 @@ int main() {
 	Monopoly game;
 	game.playersInput();
 	game.makeGame();
-	//system("pause");
-	//system("cls");
-	//game.drawBoard();
-	//game.drawPlayersOnBoard();
-	//game.start();
+	system("pause");
+	system("cls");
+	game.drawBoard();
+	game.drawPlayersOnBoard();
+	game.start();
 
-	game.test();
-	game.test();
-	game.test();
-	game.test();
-	game.test();
+	//game.test();
+	//game.test();
+	//game.test();
+	//game.test();
+	//game.test();
 	return 0;
 }

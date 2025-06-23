@@ -154,6 +154,8 @@
     <ClInclude Include="Player.h" />
     <ClInclude Include="Property.h" />
     <ClInclude Include="RollDiceCommand.h" />
+    <ClInclude Include="SellCastleCommand.h" />
+    <ClInclude Include="SellCottageCommand.h" />
     <ClInclude Include="SellPropertyCommand.h" />
     <ClInclude Include="StartField.h" />
   </ItemGroup>
@@ -183,6 +185,8 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Property.cpp" />
     <ClCompile Include="RollDiceCommand.cpp" />
+    <ClCompile Include="SellCastleCommand.cpp" />
+    <ClCompile Include="SellCottageCommand.cpp" />
     <ClCompile Include="SellPropertyCommand.cpp" />
     <ClCompile Include="StartField.cpp" />
     <ClCompile Include="test.cpp" />

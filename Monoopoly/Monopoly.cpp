@@ -71,8 +71,8 @@ void Monopoly::start()
 		system("pause");
 		system("cls");
 		for (int i = 0; i < players.getSize(); i++) {
-			//std::cout << "Player " << (i + 1) << std::endl;
-			turn(players[i]);
+			std::cout << "Player " << (i + 1) << std::endl;
+			turn(players[i],i);
 		}
 		std::cout << std::endl;
 		for (int i = 0; i < players.getSize(); i++) {
@@ -81,27 +81,47 @@ void Monopoly::start()
 	} while (!isGameOver);
 }
 
-void Monopoly::turn(Player& player)
+void Monopoly::turn(Player& player,size_t i)
 {
-	
+	int rollCount = 0;
+	int moveCount = 0;
 	do {
 		system("pause");
 		system("cls");
+		again:
+		std::cout << "Insert command:\n";
+		MyString command;
+		std::cout << ">";
+		std::cin >> command;
+		if (command != "roll_dice")
+			goto again;
+		Command* cmd = CommandFactory::createCommand(command, *this, i);
+		cmd->execute();
+		do {
+			again2:
+			std::cout << "Insert command:\n";
+			std::cout << ">";
+			std::cin >> command;
+			if (command == "roll_dice")
+				goto again2;
+			rollCount++;
+			Command* cmd = CommandFactory::createCommand(command, *this, i);
+			if (cmd) {
 
-		std::cout << std::endl;
-		std::cout << player.getName() << "'s turn.\n";
-		dice.rollingADice();
-		std::cout << dice.getFirstDie() << " " << dice.getSecondDie() << "\n";
-		player.move(&dice);
-
+				cmd->execute();
+				std::cout << dice.getFirstDie() << dice.getSecondDie() << "\n";
+				std::cout << players[i].getPosition() << "\n";
+			}
+			else {
+				std::cout << "Invalid command.\n";
+			}
+		}
+		while (command != "end" && moveCount != rollCount);
 		system("pause");
 		system("cls");
 		drawBoard();
 		drawPlayersOnBoard();
 
-		std::cout << std::endl;
-		fields[player.getPosition()]->print();
-		fields[player.getPosition()]->applyEffect(player);
 	} while (dice.getFirstDie() == dice.getSecondDie());
 }
 
