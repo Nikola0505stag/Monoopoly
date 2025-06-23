@@ -54,5 +54,7 @@ int main() {
 	game.test();
 	game.test();
 	game.test();
+	game.test();
+	game.test();
 	return 0;
 }

@@ -96,6 +96,12 @@
     <ClInclude Include="SellPropertyCommand.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="BuyCottageCommand.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BuyCastleCommand.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MyString.cpp">
@@ -174,6 +180,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SellPropertyCommand.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BuyCottageCommand.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BuyCastleCommand.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

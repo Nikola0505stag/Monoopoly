@@ -129,6 +129,8 @@
   <ItemGroup>
     <ClInclude Include="Bank.h" />
     <ClInclude Include="Board.h" />
+    <ClInclude Include="BuyCastleCommand.h" />
+    <ClInclude Include="BuyCottageCommand.h" />
     <ClInclude Include="Card.h" />
     <ClInclude Include="CardField.h" />
     <ClInclude Include="Command.h" />
@@ -158,6 +160,8 @@
   <ItemGroup>
     <ClCompile Include="Bank.cpp" />
     <ClCompile Include="Board.cpp" />
+    <ClCompile Include="BuyCastleCommand.cpp" />
+    <ClCompile Include="BuyCottageCommand.cpp" />
     <ClCompile Include="Card.cpp" />
     <ClCompile Include="CardField.cpp" />
     <ClCompile Include="Command.cpp" />

@@ -17,5 +17,4 @@ void SellPropertyCommand::execute()
 	//std::cout << propertyName;
 
 	game.getBank().sellProperty(&player, propertyName);
-
 }
