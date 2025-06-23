@@ -142,6 +142,7 @@
     <ClInclude Include="HelpCommand.h" />
     <ClInclude Include="Jail.h" />
     <ClInclude Include="Monopoly.h" />
+    <ClInclude Include="MovePlayerCommand.h" />
     <ClInclude Include="MovePositionCard.h" />
     <ClInclude Include="MyQueue.hpp" />
     <ClInclude Include="MyString.h" />
@@ -151,6 +152,7 @@
     <ClInclude Include="Player.h" />
     <ClInclude Include="Property.h" />
     <ClInclude Include="RollDiceCommand.h" />
+    <ClInclude Include="SellPropertyCommand.h" />
     <ClInclude Include="StartField.h" />
   </ItemGroup>
   <ItemGroup>
@@ -169,6 +171,7 @@
     <ClCompile Include="HelpCommand.cpp" />
     <ClCompile Include="Jail.cpp" />
     <ClCompile Include="Monopoly.cpp" />
+    <ClCompile Include="MovePlayerCommand.cpp" />
     <ClCompile Include="MovePositionCard.cpp" />
     <ClCompile Include="MyString.cpp" />
     <ClCompile Include="Parking.cpp" />
@@ -176,6 +179,7 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Property.cpp" />
     <ClCompile Include="RollDiceCommand.cpp" />
+    <ClCompile Include="SellPropertyCommand.cpp" />
     <ClCompile Include="StartField.cpp" />
     <ClCompile Include="test.cpp" />
   </ItemGroup>

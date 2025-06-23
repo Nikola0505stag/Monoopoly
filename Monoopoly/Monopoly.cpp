@@ -9,8 +9,7 @@ void Monopoly::playersInput()
 	std::cin >> playersCount;
 
 	if (playersCount < 2 || playersCount > 6) {
-		throw std::invalid_argument("Invalid number of players."
-			" Please enter a number between 2 and 6.");
+		throw std::invalid_argument("Invalid number of players.Please enter a number between 2 and 6.");
 	}
 
 	for (int i = 0; i < playersCount; i++) {
@@ -114,24 +113,44 @@ void Monopoly::acrossStart(Player& player, size_t prePos, size_t afterPos)
 
 void Monopoly::test()
 {
+	//players[1].setPosition(37);
+	std::cout << players[1]<<"\n";
 	std::cout << "Insert command:\n";
 	MyString command;
 	std::cout << ">";
 	std::cin >> command;
 
-	Command* cmd = CommandFactory::createCommand(command,*this);
+	Command* cmd = CommandFactory::createCommand(command,*this,1);
 	if (cmd) {
 		cmd->execute();
 		std::cout << dice.getFirstDie() << dice.getSecondDie() << "\n";
+		std::cout << players[1].getPosition()<<"\n";
 	}
 	else {
 		std::cout << "Invalid command.\n";
 	}
+
+	std::cout << players[1] << "\n";
 
 }
 
 Dice& Monopoly::getDice()
 {
 	return dice;
+}
+
+Player& Monopoly::getPlayer(size_t index)
+{
+	return players[index];
+}
+
+Fields& Monopoly::getFields()
+{
+	return fields;
+}
+
+Bank& Monopoly::getBank()
+{
+	return bank;
 }
 

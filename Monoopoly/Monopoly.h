@@ -35,5 +35,8 @@ public:
 	void test();
 
 	Dice& getDice();
+	Player& getPlayer(size_t index);
+	Fields& getFields();
+	Bank& getBank();
 };
 
