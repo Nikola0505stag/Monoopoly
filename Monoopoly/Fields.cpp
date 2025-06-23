@@ -135,7 +135,7 @@ void Fields::fillFields()
 	addField(new CardField(36, deck));
 	addField(new Property(37, "Park Place", 35, 350, 200, 200, nullptr, Color::DarkBlue));
 	addField(new CardField(38, deck));
-	addField(new Property(39, "Boardwalk ", 35, 400, 200, 200, nullptr, Color::DarkBlue));
+	addField(new Property(39, "Boardwalk", 35, 400, 200, 200, nullptr, Color::DarkBlue));
 }
 
 size_t Fields::getSize() const

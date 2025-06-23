@@ -117,22 +117,24 @@ void Monopoly::test()
 	std::cin.ignore();
 	char buffer[1024];
 	std::cin.getline(buffer, 1024);
-	std::cout << buffer;
+	//std::cout << buffer;
 	MyString name = buffer;
-	std::cout << name;
+	//std::cout << name;
 
-	players[0].setPosition(31);
-	fields[31]->applyEffect(players[0]);
+
+	players[0].setPosition(39);
+	//fields[39]->print();
+	fields[39]->applyEffect(players[0]);
 	std::cout << "\n\n\n";
 	std::cout << players[0];
 	std::cout << "\n\n\n";
-	bank.sellProperty(&players[0], name);
 	
-	
+	bank.buyCottage(&players[0], name);
+	bank.buyCastle(&players[0], name);
+
 	std::cout << "\n\n\n";
-	fields[31]->print();
-	std::cout << "\n\n\n";
-	std::cout << players[0];
-	
+	std::cout << players[0] << "\n";
+	fields[39]->print();
+	//fields[1]
 }
 

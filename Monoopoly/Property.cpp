@@ -9,6 +9,8 @@ Property::Property() : Field()
     setColor(Color::DEFAULT_COLOR);
     setPricePerNight(0);
     setMortgaged(false);
+    setCastleCount(0);
+    setCottageCount(0);
 }
 
 Property::Property(size_t index, const MyString& description, unsigned int pricePerNight, unsigned int price,
@@ -22,6 +24,8 @@ Property::Property(size_t index, const MyString& description, unsigned int price
     setColor(color);
     setPricePerNight(pricePerNight);
     setMortgaged(false);
+    setCastleCount(0);
+    setCottageCount(0);
 }
 
 void Property::setPrice(unsigned int price)
@@ -61,6 +65,22 @@ void Property::setMortgaged(bool mortgaged)
 	this->mortgaged = mortgaged;
 }
 
+void Property::setCottageCount(size_t cottageCount)
+{
+    if(cottageCount > 4)
+		throw std::invalid_argument("Cottage count cannot exceed 4.");
+
+    this->cottageCount = cottageCount;
+}
+
+void Property::setCastleCount(size_t castleCount)
+{
+    if(castleCount > 4)
+		throw std::invalid_argument("Castle count cannot exceed 4.");
+
+    this->castleCount = castleCount;
+}
+
 unsigned int Property::getPrice() const
 {
     return price;
@@ -79,6 +99,16 @@ unsigned int Property::getPriceCastle() const
 unsigned int Property::getPricePerNight() const
 {
     return pricePerNight;
+}
+
+size_t Property::getCottageCount() const
+{
+    return cottageCount;
+}
+
+size_t Property::getCastleCount() const
+{
+    return castleCount;
 }
 
 Color Property::getColor() const
@@ -111,10 +141,13 @@ void Property::print() const
     std::cout << "|      "  << color<<"     |\n";
     std::cout << "|Mortgaged:"; mortgaged ? std::cout << "Yes" : std::cout << "No";
     std::cout << "|\n";
+	std::cout << "|Cot.Count: " << cottageCount << "|\n";
+	std::cout << "|Cas.Count: " << castleCount << "|\n";
+    std::cout << "|Pr. night: " << pricePerNight << "|\n";
     if (owner == nullptr)
         std::cout << "| Player:None|\n";
     else
-		std::cout << "| Player: " << owner->getName() << "|\n";
+        std::cout << "| Player: " << owner->getName() << "|\n";
     std::cout << "|            |\n";
     std::cout << "--------------\n";
         

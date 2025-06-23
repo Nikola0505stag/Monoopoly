@@ -24,6 +24,8 @@ class Property : public Field
 	unsigned int priceCastle;
 	Color color;
 	bool mortgaged;
+	size_t cottageCount;
+	size_t castleCount;
 
 public:
 	Property();
@@ -38,11 +40,15 @@ public:
 	void setColor(Color color);
 	void setPricePerNight(unsigned int pricePerNight);
 	void setMortgaged(bool mortgaged);
+	void setCottageCount(size_t cottageCount);
+	void setCastleCount(size_t castleCount);
 
 	unsigned int getPrice() const;
 	unsigned int getPriceHouse() const;
 	unsigned int getPriceCastle() const;
 	unsigned int getPricePerNight() const;
+	size_t getCottageCount() const;
+	size_t getCastleCount() const;
 	Color getColor() const;
 
 	Player* getOwner() const;
