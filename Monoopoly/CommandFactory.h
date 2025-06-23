@@ -1,5 +1,6 @@
 #pragma once
 #include "RollDiceCommand.h"
+#include "HelpCommand.h"
 class Monopoly;
 #include <iostream>
 #include "MyString.h"

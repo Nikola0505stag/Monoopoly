@@ -114,14 +114,15 @@ void Monopoly::acrossStart(Player& player, size_t prePos, size_t afterPos)
 
 void Monopoly::test()
 {
-	std::cout << "Insert command";
+	std::cout << "Insert command:\n";
 	MyString command;
+	std::cout << ">";
 	std::cin >> command;
 
 	Command* cmd = CommandFactory::createCommand(command,*this);
 	if (cmd) {
 		cmd->execute();
-		std::cout << dice.getFirstDie() << dice.getSecondDie();
+		std::cout << dice.getFirstDie() << dice.getSecondDie() << "\n";
 	}
 	else {
 		std::cout << "Invalid command.\n";
