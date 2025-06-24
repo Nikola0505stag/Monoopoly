@@ -153,6 +153,7 @@
     <ClInclude Include="Parking.h" />
     <ClInclude Include="PaymentCard.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="PrintPlayerCommand.h" />
     <ClInclude Include="Property.h" />
     <ClInclude Include="RollDiceCommand.h" />
     <ClInclude Include="SellCastleCommand.h" />
@@ -185,6 +186,7 @@
     <ClCompile Include="Parking.cpp" />
     <ClCompile Include="PaymentCard.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="PrintPlayerCommand.cpp" />
     <ClCompile Include="Property.cpp" />
     <ClCompile Include="RollDiceCommand.cpp" />
     <ClCompile Include="SellCastleCommand.cpp" />

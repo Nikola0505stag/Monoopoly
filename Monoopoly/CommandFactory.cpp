@@ -21,5 +21,7 @@ Command* CommandFactory::createCommand(const MyString& commandName, Monopoly& ga
 		return new SellCastleCommand(game, index);
 	else if (commandName == "clear")
 		return new ClearCommand();
+	else if (commandName == "print_player")
+		return new PrintPlayerCommand(game, index);
 	return nullptr;
 }

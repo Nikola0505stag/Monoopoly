@@ -6,8 +6,6 @@ class ClearCommand:public Command
 {
 public:
 
-
-	// Inherited via Command
 	void execute() override;
 
 };

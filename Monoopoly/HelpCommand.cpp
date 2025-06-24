@@ -10,6 +10,7 @@ void HelpCommand::execute()
 		<< "buy_castle - by castle on a property\n"
 		<< "sell_cottage - sell cottage from a property to the bank\n"
 		<< "sell_castle - sell castle from a property to the bank\n"
-		<< "clear - clear the console\n";
+		<< "clear - clear the console\n"
+		<< "print_player - prints player stats";
 	std::cout << "\n\n";
 }

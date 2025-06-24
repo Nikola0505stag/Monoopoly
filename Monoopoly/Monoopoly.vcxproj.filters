@@ -111,6 +111,9 @@
     <ClInclude Include="ClearCommand.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="PrintPlayerCommand.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MyString.cpp">
@@ -204,6 +207,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ClearCommand.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PrintPlayerCommand.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
