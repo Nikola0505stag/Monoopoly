@@ -45,6 +45,10 @@ void Bank::buyCottage(Player* player, const MyString& propertyName)
 
 				Property* prop = dynamic_cast<Property*>((*fields)[i]);
 				if (!prop->isMortgaged()) {
+					if(prop->getCastleCount() > 0 || prop->getCottageCount() > 4)
+						throw std::invalid_argument
+						("You can only build castles!");
+
 					std::cout << "\n\n" << prop->getPricePerNight() << "\n\n";
 
 					prop->setCottageCount(prop->getCottageCount() + 1);
@@ -73,7 +77,11 @@ void Bank::buyCastle(Player* player, const MyString& propertyName)
 				
 				Property* prop = dynamic_cast<Property*>((*fields)[i]);
 				if (!prop->isMortgaged()) {
+					if (prop->getCottageCount() < 4 && prop->getCastleCount() < 1)
+						throw std::invalid_argument
+						("You must build 4 cottages before you can build a castle!");
 					prop->setCastleCount(prop->getCastleCount() + 1);
+					prop->setCottageCount(0);
 					player->setMoney(player->getMoney() - prop->getPriceCastle());
 					prop->setPricePerNight(prop->getPricePerNight() +
 						prop->getPricePerNight() / 2);
@@ -100,6 +108,7 @@ void Bank::sellCottage(Player* player, const MyString& propertyName)
 
 				Property* prop = dynamic_cast<Property*>((*fields)[i]);
 				if (!prop->isMortgaged()) {
+					//if(prop->getCastleCount() > 1)
 					prop->setCottageCount(prop->getCottageCount() - 1);
 					player->setMoney(player->getMoney() + prop->getPriceHouse());
 					prop->setPricePerNight(prop->getPricePerNight() -

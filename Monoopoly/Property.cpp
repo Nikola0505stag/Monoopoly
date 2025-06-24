@@ -67,16 +67,16 @@ void Property::setMortgaged(bool mortgaged)
 
 void Property::setCottageCount(size_t cottageCount)
 {
-    if(cottageCount > 4)
-		throw std::invalid_argument("Cottage count cannot exceed 4.");
+    if(cottageCount > 4 || cottageCount < 0)
+		throw std::invalid_argument("Cottage count cannot exceed 4 or be below 0.");
 
     this->cottageCount = cottageCount;
 }
 
 void Property::setCastleCount(size_t castleCount)
 {
-    if(castleCount > 4)
-		throw std::invalid_argument("Castle count cannot exceed 4.");
+    if (castleCount > 4 || castleCount < 0)
+		throw std::invalid_argument("Castle count cannot exceed 4 or be below 0.");
 
     this->castleCount = castleCount;
 }

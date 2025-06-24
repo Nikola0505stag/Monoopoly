@@ -15,5 +15,12 @@ void BuyCottageCommand::execute()
 	std::cin.getline(buff, 1024);
 	propertyName = buff;
 
-	game.getBank().buyCottage(&player, propertyName);
+	try
+	{
+		game.getBank().buyCottage(&player, propertyName);
+	}
+	catch (const std::exception& e)
+	{
+		std::cout << "Error: " << e.what() << "\n";
+	}
 }

@@ -15,6 +15,10 @@ void SellPropertyCommand::execute()
 	std::cin.getline(buff, 1024);
 	propertyName = buff;
 	//std::cout << propertyName;
-
-	game.getBank().sellProperty(&player, propertyName);
+	try {
+		game.getBank().sellProperty(&player, propertyName);
+	}
+	catch (std::exception e) {
+		std::cout << "Error: " << e.what() << "\n";
+	}
 }

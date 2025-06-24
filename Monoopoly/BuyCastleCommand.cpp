@@ -15,5 +15,10 @@ void BuyCastleCommand::execute()
 	std::cin.getline(buff, 1024);
 	propertyName = buff;
 
-	game.getBank().buyCastle(&player, propertyName);
+	try{
+		game.getBank().buyCastle(&player, propertyName);
+	}
+	catch(const std::exception& e){
+			std::cout << "Error: " << e.what() << "\n";
+	}
 }

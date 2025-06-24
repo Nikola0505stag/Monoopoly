@@ -81,49 +81,87 @@ void Monopoly::start()
 	} while (!isGameOver);
 }
 
-void Monopoly::turn(Player& player,size_t i)
+void Monopoly::turn(Player& player, size_t i)
 {
 	int rollCount = 0;
 	int moveCount = 0;
+
 	do {
+		rollCount = 0;
+		moveCount = 0;
+
 		system("pause");
 		system("cls");
-		again:
-		std::cout << "Insert command:\n";
-		MyString command;
-		std::cout << ">";
-		std::cin >> command;
-		if (command != "roll_dice")
-			goto again;
-		Command* cmd = CommandFactory::createCommand(command, *this, i);
-		cmd->execute();
-		do {
-			again2:
-			std::cout << "Insert command:\n";
-			std::cout << ">";
-			std::cin >> command;
-			if (command == "roll_dice")
-				goto again2;
-			rollCount++;
-			Command* cmd = CommandFactory::createCommand(command, *this, i);
-			if (cmd) {
 
-				cmd->execute();
-				std::cout << dice.getFirstDie() << dice.getSecondDie() << "\n";
-				std::cout << players[i].getPosition() << "\n";
+		// Задължителен начален roll_dice
+	again_roll:
+		std::cout << "Insert command (must be roll_dice):\n> ";
+		MyString command;
+		std::cin >> command;
+
+		if (command != "roll_dice") {
+			std::cout << "You must roll the dice first!\n";
+			goto again_roll;
+		}
+
+		Command* cmd = CommandFactory::createCommand(command, *this, i);
+		if (cmd) {
+			cmd->execute();
+			rollCount++;
+		}
+		else {
+			std::cout << "Invalid command.\n";
+			goto again_roll;
+		}
+		std::cout << "Rolled: " << dice.getFirstDie() << " and " << dice.getSecondDie() << "\n";
+		std::cout << "Position: " << players[i].getPosition() << "\n";
+
+		MyString postCommand;
+		do {
+		again_command:
+			std::cout << "Insert command:\n> ";
+			std::cin >> postCommand;
+
+			if (postCommand == "roll_dice") {
+				std::cout << "You have already rolled the dice this turn!\n";
+				goto again_command;
+			}
+
+			if (postCommand == "move") {
+				if (moveCount >= rollCount) {
+					std::cout << "You can't move more than you've rolled!\n";
+					goto again_command;
+				}
+				moveCount++;
+			}
+
+			if (postCommand == "end") {
+				if (moveCount < rollCount) {
+					std::cout << "You must move before ending your turn!\n";
+					goto again_command;
+				}
+				break; 
+			}
+
+			Command* postCmd = CommandFactory::createCommand(postCommand, *this, i);
+			if (postCmd) {
+				postCmd->execute();
+				std::cout << "Position: " << players[i].getPosition() << "\n";
 			}
 			else {
 				std::cout << "Invalid command.\n";
 			}
-		}
-		while (command != "end" && moveCount != rollCount);
+
+		} while (true); // докато не се въведе валидна команда за движение или край на хода
+
 		system("pause");
 		system("cls");
 		drawBoard();
 		drawPlayersOnBoard();
 
-	} while (dice.getFirstDie() == dice.getSecondDie());
+	} while (dice.getFirstDie() == dice.getSecondDie()); // ако има двойка → нов ход
 }
+
 
 void Monopoly::acrossStart(Player& player, size_t prePos, size_t afterPos)
 {
@@ -133,25 +171,11 @@ void Monopoly::acrossStart(Player& player, size_t prePos, size_t afterPos)
 
 void Monopoly::test()
 {
-	//players[1].setPosition(37);
-	std::cout << players[1]<<"\n";
-	std::cout << "Insert command:\n";
-	MyString command;
-	std::cout << ">";
-	std::cin >> command;
-
-	Command* cmd = CommandFactory::createCommand(command,*this,1);
-	if (cmd) {
-		cmd->execute();
-		std::cout << dice.getFirstDie() << dice.getSecondDie() << "\n";
-		std::cout << players[1].getPosition()<<"\n";
-	}
-	else {
-		std::cout << "Invalid command.\n";
-	}
-
-	std::cout << players[1] << "\n";
-
+	players[0].setPosition(1);
+	fields[1]->applyEffect(players[0]);
+	std::cout <<"\n\n\n"<< players[0] << "\n\n\n";
+	fields[1]->applyEffect(players[0]);
+	std::cout << "\n\n\n" << players[0] << "\n\n\n";
 }
 
 Dice& Monopoly::getDice()

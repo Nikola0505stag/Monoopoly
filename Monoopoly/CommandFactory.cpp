@@ -19,5 +19,7 @@ Command* CommandFactory::createCommand(const MyString& commandName, Monopoly& ga
 		return new SellCottageCommand(game, index);
 	else if (commandName == "sell_castle")
 		return new SellCastleCommand(game, index);
+	else if (commandName == "clear")
+		return new ClearCommand();
 	return nullptr;
 }

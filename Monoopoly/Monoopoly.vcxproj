@@ -133,6 +133,7 @@
     <ClInclude Include="BuyCottageCommand.h" />
     <ClInclude Include="Card.h" />
     <ClInclude Include="CardField.h" />
+    <ClInclude Include="ClearCommand.h" />
     <ClInclude Include="Command.h" />
     <ClInclude Include="CommandFactory.h" />
     <ClInclude Include="Deck.h" />
@@ -166,6 +167,7 @@
     <ClCompile Include="BuyCottageCommand.cpp" />
     <ClCompile Include="Card.cpp" />
     <ClCompile Include="CardField.cpp" />
+    <ClCompile Include="ClearCommand.cpp" />
     <ClCompile Include="Command.cpp" />
     <ClCompile Include="CommandFactory.cpp" />
     <ClCompile Include="Deck.cpp" />

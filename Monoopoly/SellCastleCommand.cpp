@@ -16,4 +16,11 @@ void SellCastleCommand::execute()
 	propertyName = buff;
 
 	game.getBank().sellCastle(&player, propertyName);
+
+	try {
+		game.getBank().sellCastle(&player, propertyName);
+	}
+	catch (std::exception e) {
+		std::cout << "Error: " << e.what() << "\n";
+	}
 }

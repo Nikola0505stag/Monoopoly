@@ -7,6 +7,7 @@
 #include "BuyCastleCommand.h"
 #include "SellCottageCommand.h"
 #include "SellCastleCommand.h"
+#include "ClearCommand.h"
 class Monopoly;
 #include <iostream>
 #include "MyString.h"
