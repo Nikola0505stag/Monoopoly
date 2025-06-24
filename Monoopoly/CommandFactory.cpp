@@ -23,5 +23,7 @@ Command* CommandFactory::createCommand(const MyString& commandName, Monopoly& ga
 		return new ClearCommand();
 	else if (commandName == "print_player")
 		return new PrintPlayerCommand(game, index);
+	else if (commandName == "surrender")
+		return new SurrenderCommand(game, index);
 	return nullptr;
 }

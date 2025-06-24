@@ -38,5 +38,9 @@ public:
 	Player& getPlayer(size_t index);
 	Fields& getFields();
 	Bank& getBank();
+
+	void isGameFinished();
+
+	void removePlayer(size_t index);
 };
 

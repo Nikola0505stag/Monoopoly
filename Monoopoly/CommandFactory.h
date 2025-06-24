@@ -9,6 +9,7 @@
 #include "SellCastleCommand.h"
 #include "ClearCommand.h"
 #include "PrintPlayerCommand.h"
+#include "SurrenderCommand.h"
 class Monopoly;
 #include <iostream>
 #include "MyString.h"

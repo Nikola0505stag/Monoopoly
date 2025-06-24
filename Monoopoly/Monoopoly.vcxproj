@@ -160,6 +160,7 @@
     <ClInclude Include="SellCottageCommand.h" />
     <ClInclude Include="SellPropertyCommand.h" />
     <ClInclude Include="StartField.h" />
+    <ClInclude Include="SurrenderCommand.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Bank.cpp" />
@@ -193,6 +194,7 @@
     <ClCompile Include="SellCottageCommand.cpp" />
     <ClCompile Include="SellPropertyCommand.cpp" />
     <ClCompile Include="StartField.cpp" />
+    <ClCompile Include="SurrenderCommand.cpp" />
     <ClCompile Include="test.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

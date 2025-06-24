@@ -79,6 +79,8 @@ void Monopoly::start()
 			std::cout << players[i] << "\n";
 		}
 	} while (!isGameOver);
+	std::cout << "Game over! Thanks for playing!\n";
+	std::cout << "Winner: " << players[0].getName() << "\n"; 
 }
 
 void Monopoly::turn(Player& player, size_t i)
@@ -197,5 +199,17 @@ Fields& Monopoly::getFields()
 Bank& Monopoly::getBank()
 {
 	return bank;
+}
+
+void Monopoly::isGameFinished()
+{
+	if (players.getSize() <= 1)
+		isGameOver = true;
+}
+
+void Monopoly::removePlayer(size_t index)
+{
+	if (index < players.getSize())
+		players.erase(index);
 }
 
