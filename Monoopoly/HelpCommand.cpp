@@ -13,6 +13,7 @@ void HelpCommand::execute()
 		<< "clear - clear the console\n"
 		<< "print_player - prints player stats\n"
 		<< "surrender - the player leaves the game\n"
-		<< "print_field - prints a given field\n";
+		<< "print_field - prints a given field\n"
+		<< "trade - trade property with other players\n";
 	std::cout << "\n\n";
 }

@@ -49,8 +49,9 @@ int main() {
 	system("cls");
 	game.drawBoard();
 	game.drawPlayersOnBoard();
-	game.start();
-
+	
+		game.start();
+	
 	//game.test();
 	//game.test();
 	//game.test();

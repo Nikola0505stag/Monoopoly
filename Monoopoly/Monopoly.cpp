@@ -241,3 +241,8 @@ void Monopoly::removePlayer(size_t index)
 
 }
 
+size_t Monopoly::getPlayerSize() const
+{
+	return players.getSize();
+}
+

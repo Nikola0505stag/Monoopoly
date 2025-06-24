@@ -162,6 +162,7 @@
     <ClInclude Include="SellPropertyCommand.h" />
     <ClInclude Include="StartField.h" />
     <ClInclude Include="SurrenderCommand.h" />
+    <ClInclude Include="TradeCommand.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Bank.cpp" />
@@ -198,6 +199,7 @@
     <ClCompile Include="StartField.cpp" />
     <ClCompile Include="SurrenderCommand.cpp" />
     <ClCompile Include="test.cpp" />
+    <ClCompile Include="TradeCommand.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

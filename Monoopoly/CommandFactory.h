@@ -11,6 +11,7 @@
 #include "PrintPlayerCommand.h"
 #include "SurrenderCommand.h"
 #include "PrintFieldCommand.h"
+#include "TradeCommand.h"
 class Monopoly;
 #include <iostream>
 #include "MyString.h"

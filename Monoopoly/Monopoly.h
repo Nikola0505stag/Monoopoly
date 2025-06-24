@@ -42,5 +42,6 @@ public:
 	void isGameFinished();
 
 	void removePlayer(size_t index);
+	size_t getPlayerSize() const;
 };
 

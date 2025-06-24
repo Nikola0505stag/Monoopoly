@@ -33,6 +33,8 @@ int Player::getMoney() const
 
 void Player::setMoney(int money)
 {
+    if(money < 0 && money*-1 > this->money)
+		throw std::invalid_argument("You don't have enough money to set this amount.");
     this->money = money;
 }
 
