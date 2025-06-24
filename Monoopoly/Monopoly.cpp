@@ -173,9 +173,10 @@ void Monopoly::test()
 {
 	players[0].setPosition(1);
 	fields[1]->applyEffect(players[0]);
-	std::cout <<"\n\n\n"<< players[0] << "\n\n\n";
-	fields[1]->applyEffect(players[0]);
-	std::cout << "\n\n\n" << players[0] << "\n\n\n";
+	//bank.buyCottage(&players[0], "Mediterranean Avenue");
+	players[0].setPosition(3);
+	fields[3]->applyEffect(players[0]);
+	bank.buyCottage(&players[0], "Mediterranean Avenue");
 }
 
 Dice& Monopoly::getDice()

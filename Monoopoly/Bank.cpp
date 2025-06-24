@@ -44,10 +44,26 @@ void Bank::buyCottage(Player* player, const MyString& propertyName)
 			if ((*fields)[i]->getDescription() == propertyName) {
 
 				Property* prop = dynamic_cast<Property*>((*fields)[i]);
+				Color color = prop->getColor();
+				int totalColorProps = 0;
+				int ownedColorProps = 0;
 				if (!prop->isMortgaged()) {
 					if(prop->getCastleCount() > 0 || prop->getCottageCount() > 4)
 						throw std::invalid_argument
 						("You can only build castles!");
+
+					for (int j = 0; j < fields->getSize(); j++) {
+						Field* current = (*fields)[j];
+						Property* p = dynamic_cast<Property*>(current);
+						if (p && p->getColor() == color) {
+							totalColorProps++;
+							if (p->getOwner() == player)
+								ownedColorProps++;
+						}
+					}
+
+					if (totalColorProps != ownedColorProps)
+						throw std::invalid_argument("You must own all properties of this color to build cottages.");
 
 					std::cout << "\n\n" << prop->getPricePerNight() << "\n\n";
 
