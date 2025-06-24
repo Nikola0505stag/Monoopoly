@@ -52,6 +52,7 @@ public:
 	Color getColor() const;
 
 	Player* getOwner() const;
+	void setOwner(Player* player);
 
 	void print() const override;
 	Field* clone() const override;

@@ -121,6 +121,12 @@ Player* Property::getOwner() const
     return owner;
 }
 
+void Property::setOwner(Player* player)
+{
+    owner = nullptr;
+    this->owner = player;
+}
+
 void Property::print() const
 {
    /* std::cout << "Property: " << getDescription() << "\n"

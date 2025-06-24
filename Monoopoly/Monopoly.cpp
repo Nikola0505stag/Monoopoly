@@ -67,20 +67,36 @@ void Monopoly::drawPlayersOnBoard()
 
 void Monopoly::start()
 {
-	do {
+	while (!isGameOver) {
 		system("pause");
 		system("cls");
-		for (int i = 0; i < players.getSize(); i++) {
-			std::cout << "Player " << (i + 1) << std::endl;
-			turn(players[i],i);
+
+		size_t i = 0;
+		while (i < players.getSize()) {
+			std::cout << players[i] << std::endl;
+
+			size_t previousSize = players.getSize();
+			turn(players[i], i); 
+
+			isGameFinished(); 
+
+			if (i >= players.getSize())
+				continue;
+
+			if (players.getSize() == previousSize)
+				i++;
 		}
 		std::cout << std::endl;
-		for (int i = 0; i < players.getSize(); i++) {
-			std::cout << players[i] << "\n";
+		for (size_t j = 0; j < players.getSize(); j++) {
+			std::cout << players[j] << "\n";
 		}
-	} while (!isGameOver);
+	}
+
 	std::cout << "Game over! Thanks for playing!\n";
-	std::cout << "Winner: " << players[0].getName() << "\n"; 
+	if (players.getSize() == 1)
+		std::cout << "Winner: " << players[0].getName() << "\n";
+	else
+		std::cout << "No winner.\n";
 }
 
 void Monopoly::turn(Player& player, size_t i)
@@ -209,7 +225,19 @@ void Monopoly::isGameFinished()
 
 void Monopoly::removePlayer(size_t index)
 {
-	if (index < players.getSize())
-		players.erase(index);
+	if (index >= players.getSize())
+		return;
+
+	Player& playerToRemove = players[index];
+
+	for (int i = 0; i < fields.getSize(); i++) {
+		Property* prop = dynamic_cast<Property*>(fields[i]);
+		if (prop && prop->getOwner() == &playerToRemove) {
+			prop->setOwner(nullptr);
+		}
+	}
+
+	players.erase(index);
+
 }
 

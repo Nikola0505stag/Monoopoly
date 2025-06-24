@@ -10,6 +10,7 @@
 #include "ClearCommand.h"
 #include "PrintPlayerCommand.h"
 #include "SurrenderCommand.h"
+#include "PrintFieldCommand.h"
 class Monopoly;
 #include <iostream>
 #include "MyString.h"

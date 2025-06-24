@@ -171,4 +171,42 @@ void Bank::sellCastle(Player* player, const MyString& propertyName)
 		throw std::invalid_argument("Property not yours or not found!");
 }
 
+void Bank::trade(Player* player, const MyString& propertyName, Player* otherPlayer)
+{
+	std::cout << "\n\nTrading " << propertyName << " with " << otherPlayer->getName() << "\n\n";
+
+	int price;
+	std::cin >> price;
+	std::cout << price;
+	char answer;
+	std::cout << "Want to trade? (y/n): ";
+	std::cin >> answer;
+
+	if (answer == 'y') {
+		if (fields->doesPlayerOwnProperty(player, propertyName)) {
+			for (int i = 0; i < fields->getSize(); i++) {
+				if ((*fields)[i]->getDescription() == propertyName) {
+
+					Property* prop = dynamic_cast<Property*>((*fields)[i]);
+					if (!prop->isMortgaged()) {
+						player->setMoney(player->getMoney() + price);
+						otherPlayer->setMoney(otherPlayer->getMoney() - price);
+						prop->setOwner(otherPlayer);
+						std::cout << "\n\n";
+						prop->print();
+						std::cout << "\n\n";
+					}
+					else
+						std::cout << "\nProperty is mortgaged! You cannot trade it.\n\n";
+				}
+			}
+		}
+		else
+			throw std::invalid_argument("Property not yours or not found!");
+	}
+	else {
+		std::cout << "Trade cancelled.\n";
+	}
+}
+
 
